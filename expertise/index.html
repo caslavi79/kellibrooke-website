@@ -42,6 +42,25 @@ nav{position:sticky;top:0;z-index:50;background:rgba(248,245,239,0.85);backdrop-
 .placeholder{padding:60px 0 120px;text-align:center;color:var(--muted);font-size:15px}
 .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--gold);text-decoration:none;font-weight:500;font-size:14px;margin-bottom:32px}
 .back-link:hover{gap:10px}
+.scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding-bottom:80px}
+.scenario-card{background:var(--white);border-radius:18px;padding:32px 28px;box-shadow:0 8px 30px rgba(26,58,42,0.08),0 2px 6px rgba(26,58,42,0.04);transition:all 0.3s;border:1.5px solid transparent;display:flex;flex-direction:column}
+.scenario-card:hover{box-shadow:0 20px 50px rgba(26,58,42,0.12),0 4px 10px rgba(26,58,42,0.06);transform:translateY(-4px);border-color:var(--gold)}
+.scenario-num{font-family:'DM Serif Display',serif;font-size:48px;color:rgba(201,168,76,0.15);line-height:1;margin-bottom:8px}
+.scenario-title{font-family:'DM Serif Display',serif;font-size:20px;color:var(--forest);margin-bottom:10px}
+.scenario-body{font-size:14px;color:var(--muted);line-height:1.75;font-weight:300;flex:1}
+.scenario-cta{margin-top:16px;font-size:13px;color:var(--gold);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:gap 0.15s}
+.scenario-card:hover .scenario-cta{gap:8px}
+.scenarios-bottom{text-align:center;padding:0 0 80px}
+.scenarios-bottom p{font-size:16px;color:var(--muted);margin-bottom:24px;font-weight:300}
+.btn-primary{background:var(--gold);color:var(--white);padding:16px 36px;border-radius:10px;font-size:16px;font-weight:600;text-decoration:none;transition:all 0.25s;display:inline-flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;box-shadow:0 4px 16px rgba(201,168,76,0.2)}
+.btn-primary:hover{background:var(--gold-hover);transform:translateY(-3px);box-shadow:0 8px 28px rgba(201,168,76,0.35)}
+@media(max-width:900px){
+.scenario-grid{grid-template-columns:1fr;gap:12px}
+.scenario-card{padding:24px 20px}
+.scenario-title{font-size:18px}
+.scenario-body{font-size:13px}
+.scenario-num{font-size:40px}
+}
 footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0 32px;box-shadow:0 -4px 24px rgba(26,58,42,0.03)}
 .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;padding-bottom:32px;border-bottom:1px solid var(--border);margin-bottom:24px;flex-wrap:wrap}
 .footer-brand{margin-bottom:10px}
@@ -90,12 +109,103 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <div class="page-hero">
 <a href="/kellibrooke-website/" class="back-link">&larr; Home</a>
 <div class="sec-label">Scenarios I Handle</div>
-<h1>Whatever your situation, I've seen it before.</h1>
-<p>Simple or complex, I treat every file the same. But if your situation needs more skill than a big bank can offer, that is exactly why I am here.</p>
+<h1>Every file is different. That's the point.</h1>
+<p>I handle every type of mortgage — conventional, FHA, VA, jumbo, investment, refinance. But the files I built this business on are the ones other lenders couldn't figure out. If your situation is straightforward, I'll close it fast. If it's complicated, even better.</p>
 </div>
-<div class="placeholder">
-<p>Full expertise content coming soon.</p>
+
+<div class="scenario-grid">
+
+<div class="scenario-card">
+<div class="scenario-num">01</div>
+<div class="scenario-title">First-Time Home Buyers</div>
+<div class="scenario-body">You've been told you need 20% down. You've been told you can't afford it. You've been told a dozen conflicting things by people who never bothered to run your actual numbers. I walk you through the entire process from pre-approval to keys, explain every cost in plain English, and make sure you're not leaving money on the table with programs you didn't know existed.</div>
+<a href="/kellibrooke-website/contact/" class="scenario-cta">Send me your scenario &rarr;</a>
 </div>
+
+<div class="scenario-card">
+<div class="scenario-num">02</div>
+<div class="scenario-title">Self-Employed &amp; Business Owners</div>
+<div class="scenario-body">Your business does well. Your tax returns say otherwise because your accountant is doing their job. Most lenders look at your Schedule C or K-1 and panic. I know how to read the real story in your docs — the add-backs, the depreciation, the distributions your 1040 doesn't show. Your income is real. I know how to prove it.</div>
+<a href="/kellibrooke-website/contact/" class="scenario-cta">Send me your scenario &rarr;</a>
+</div>
+
+<div class="scenario-card">
+<div class="scenario-num">03</div>
+<div class="scenario-title">Bank Statement Loans</div>
+<div class="scenario-body">If your tax returns don't reflect what you actually earn, we skip them entirely. I qualify you based on 12 to 24 months of bank deposits instead. No tax transcripts, no CPA letters, no fighting with an underwriter who doesn't understand your business. Deposits in, income calculated, done.</div>
+<a href="/kellibrooke-website/contact/" class="scenario-cta">Send me your scenario &rarr;</a>
+</div>
+
+<div class="scenario-card">
+<div class="scenario-num">04</div>
+<div class="scenario-title">1099 / Freelance / Gig Workers</div>
+<div class="scenario-body">Three 1099s, a side business, and some contract work that pays different amounts every month. Most lenders see that and close the file. I see it and start adding. If you earn the money, I can find the right way to document it and the right lender to approve it.</div>
+<a href="/kellibrooke-website/contact/" class="scenario-cta">Send me your scenario &rarr;</a>
+</div>
+
+<div class="scenario-card">
+<div class="scenario-num">05</div>
+<div class="scenario-title">Investment Property &amp; DSCR</div>
+<div class="scenario-body">You want to buy a rental property but you don't want to hand over two years of tax returns and explain every LLC you own. DSCR loans qualify based on the property's rental income, not yours. If the rent covers the mortgage, you're in. I work with investors buying their second property and investors buying their twentieth.</div>
+<a href="/kellibrooke-website/contact/" class="scenario-cta">Send me your scenario &rarr;</a>
+</div>
+
+<div class="scenario-card">
+<div class="scenario-num">06</div>
+<div class="scenario-title">VA Loans</div>
+<div class="scenario-body">Zero down. No PMI. Competitive rates. The VA loan is the single best mortgage product that exists, and most lenders don't know how to handle them properly. I do. Whether you're buying your first home with your benefit, using it again on a second property, or refinancing an existing VA loan, I know the program inside and out.</div>
+<a href="/kellibrooke-website/contact/" class="scenario-cta">Send me your scenario &rarr;</a>
+</div>
+
+<div class="scenario-card">
+<div class="scenario-num">07</div>
+<div class="scenario-title">FHA Buyers</div>
+<div class="scenario-body">FHA exists for a reason. Flexible credit requirements, low down payment options, and qualifying ratios that give you room to breathe. If another lender told you your credit isn't good enough or your debt is too high, there's a good chance they just didn't want to do the work. I do.</div>
+<a href="/kellibrooke-website/contact/" class="scenario-cta">Send me your scenario &rarr;</a>
+</div>
+
+<div class="scenario-card">
+<div class="scenario-num">08</div>
+<div class="scenario-title">Jumbo Loans</div>
+<div class="scenario-body">Above $832,750 in Texas, you're in jumbo territory. Westlake, Tarrytown, Lakeway, Lost Creek, Barton Creek — I handle these regularly. Jumbo underwriting is pickier, but the rates are more competitive than most people expect. If you're buying or refinancing at scale, I can get it done without the runaround.</div>
+<a href="/kellibrooke-website/contact/" class="scenario-cta">Send me your scenario &rarr;</a>
+</div>
+
+<div class="scenario-card">
+<div class="scenario-num">09</div>
+<div class="scenario-title">Refinancing</div>
+<div class="scenario-body">You're sitting on a rate you locked when you had no other choice and now you want to fix it. Or your home has appreciated and your loan doesn't reflect that. I'll run the numbers and tell you straight whether it makes sense. If it saves you money, we move. If it doesn't, I'll tell you that too.</div>
+<a href="/kellibrooke-website/contact/" class="scenario-cta">Send me your scenario &rarr;</a>
+</div>
+
+<div class="scenario-card">
+<div class="scenario-num">10</div>
+<div class="scenario-title">Cash-Out Refinance</div>
+<div class="scenario-body">You've built equity. Now you want to use it — renovate the house, pay off high-interest debt, fund a business, or buy another property. Cash-out refinancing lets you tap what you've earned without selling. I'll show you how much you can pull, what it does to your payment, and whether the math actually works in your favor.</div>
+<a href="/kellibrooke-website/contact/" class="scenario-cta">Send me your scenario &rarr;</a>
+</div>
+
+<div class="scenario-card">
+<div class="scenario-num">11</div>
+<div class="scenario-title">Complex Income</div>
+<div class="scenario-body">K-1 partnership distributions. RSU and stock compensation. Commission that swings 40% year to year. Bonus income your employer structures differently every quarter. Austin is full of tech workers and entrepreneurs whose income is real but doesn't fit in a box. I know how every lender underwrites these sources and I match you with the one that counts the most of it.</div>
+<a href="/kellibrooke-website/contact/" class="scenario-cta">Send me your scenario &rarr;</a>
+</div>
+
+<div class="scenario-card">
+<div class="scenario-num">12</div>
+<div class="scenario-title">Credit Rebuilds &amp; Past Events</div>
+<div class="scenario-body">Bankruptcy. Foreclosure. Short sale. Collections you forgot about. A rough couple of years that left marks on your credit. Every program has waiting periods and minimum score thresholds, and I know exactly what they are. If you're past the waiting period, I can get you into a loan. If you're not there yet, I'll tell you exactly what to do and when to come back.</div>
+<a href="/kellibrooke-website/contact/" class="scenario-cta">Send me your scenario &rarr;</a>
+</div>
+
+</div>
+
+<div class="scenarios-bottom">
+<p>Don't see your situation? Call me anyway. I've probably handled it.</p>
+<a href="/kellibrooke-website/contact/" class="btn-primary">Send Me Your Scenario &rarr;</a>
+</div>
+
 </div>
 
 <footer><div class="wrap">
