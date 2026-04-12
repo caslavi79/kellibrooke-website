@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expertise | Kellibrooke Mortgage Partners</title>
+<meta name="description" content="Austin mortgage broker specializing in first-time buyers, self-employed borrowers, complex income, and refinancing. NMLS #2022197.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--forest:#1a3a2a;--forest-08:rgba(26,58,42,0.08);--forest-05:rgba(26,58,42,0.05);--cream:#f8f5ef;--white:#fefcf9;--gold:#c9a84c;--gold-hover:#b8943f;--bark:#3d2b1f;--sage:#7a9a82;--sand:#d4c5a9;--muted:#8a7e6b;--light-muted:#b0a898;--border:#e8e2d8}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;color:var(--bark);line-height:1.6;margin:0;background:var(--cream)}
+nav{position:sticky;top:0;z-index:50;background:rgba(248,245,239,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 60px}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo img{height:28px;width:auto}
+.nav-logo .logo-line{height:28px;width:3px}
+.nav-logo .logo-mp{height:16px;width:auto;position:relative;top:2px}
+.nav-links{display:flex;align-items:center;gap:48px}
+.nav-link{font-size:14px;color:var(--muted);text-decoration:none;font-weight:500;transition:color 0.15s;position:relative}
+.nav-link:hover{color:var(--forest)}
+.nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--gold);transition:width 0.2s}
+.nav-link:hover::after{width:100%}
+.nav-link.active{color:var(--forest);font-weight:600}
+.nav-link.active::after{width:100%}
+.nav-cta{background:var(--gold);color:var(--white);padding:11px 24px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;font-family:'Outfit',sans-serif}
+.nav-cta:hover{background:var(--gold-hover);transform:translateY(-1px);box-shadow:0 4px 16px rgba(201,168,76,0.3)}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--forest);margin:5px 0;transition:all 0.3s}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:rgba(248,245,239,0.97);backdrop-filter:blur(20px);padding:20px 24px;z-index:49;border-bottom:1px solid var(--border);flex-direction:column;gap:16px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:16px;color:var(--bark);text-decoration:none;font-weight:500;padding:8px 0}
+.mobile-menu a:last-child{background:var(--gold);color:var(--white);padding:12px 24px;border-radius:8px;font-weight:600;text-align:center}
+.wrap{max-width:1100px;margin:0 auto;padding:0 40px}
+.page-hero{padding:80px 0 60px;text-align:center}
+.page-hero .sec-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px}
+.page-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,48px);color:var(--forest);margin-bottom:16px;line-height:1.15}
+.page-hero p{font-size:17px;color:var(--muted);max-width:560px;margin:0 auto;font-weight:300;line-height:1.75}
+.placeholder{padding:60px 0 120px;text-align:center;color:var(--muted);font-size:15px}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--gold);text-decoration:none;font-weight:500;font-size:14px;margin-bottom:32px}
+.back-link:hover{gap:10px}
+footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0 32px;box-shadow:0 -4px 24px rgba(26,58,42,0.03)}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;padding-bottom:32px;border-bottom:1px solid var(--border);margin-bottom:24px;flex-wrap:wrap}
+.footer-brand{margin-bottom:10px}
+.footer-sub{font-size:12px;color:var(--muted);line-height:1.7;max-width:280px}
+.footer-sub a{color:var(--gold);text-decoration:none}
+.footer-cols{display:flex;gap:48px}
+.footer-col h4{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--forest);font-weight:700;margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:var(--muted);text-decoration:none;margin-bottom:9px;transition:color 0.15s}
+.footer-col a:hover{color:var(--gold)}
+.footer-legal{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px}
+.eho-box{flex-shrink:0}
+.footer-legal-text{font-size:11px;color:var(--muted);line-height:1.7}
+.footer-complaint{font-size:10px;color:var(--light-muted);line-height:1.7;padding:16px 0;border-top:1px solid var(--border)}
+.footer-complaint a{color:var(--gold);text-decoration:none}
+.footer-bottom{text-align:center;font-size:11px;color:var(--sand);padding-top:16px}
+@media(max-width:900px){
+.nav-inner{padding:0 16px;height:56px}
+.nav-logo{gap:6px}
+.nav-logo img{height:20px}
+.nav-logo .logo-line{height:18px;width:2px}
+.nav-logo .logo-mp{height:11px}
+.nav-link{display:none}
+.nav-cta{padding:8px 14px;font-size:12px}
+.hamburger{display:block}
+.nav-links{margin-left:auto;margin-right:4vw;gap:14px}
+.wrap{padding:0 20px}
+.page-hero{padding:48px 0 40px}
+.page-hero h1{font-size:28px}
+.page-hero p{font-size:15px}
+.footer-top{flex-direction:column}
+.footer-cols{flex-direction:column;gap:20px}
+}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="/" class="nav-logo"><img src="../kellibrooke_wordmark.png" alt="Kellibrooke" class="logo-kb"><img src="../kellibrooke_line.png" alt="" class="logo-line"><img src="../kellibrooke_mp.png" alt="Mortgage Partners" class="logo-mp"></a><div class="nav-links"><a href="/expertise/" class="nav-link active">Expertise</a><a href="/#how" class="nav-link">How It Works</a><a href="/programs/" class="nav-link">Loan Programs</a><a href="/about/" class="nav-link">About Me</a><a href="tel:5123509124" class="nav-cta">(512) 350-9124</a></div><button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="/expertise/">Expertise</a>
+<a href="/#how">How It Works</a>
+<a href="/programs/">Loan Programs</a>
+<a href="/about/">About Me</a>
+<a href="tel:5123509124">(512) 350-9124</a>
+</div>
+
+<div class="wrap">
+<div class="page-hero">
+<a href="/" class="back-link">&larr; Home</a>
+<div class="sec-label">My Area of Expertise</div>
+<h1>I handle every loan. These are where I shine.</h1>
+<p>Simple or complex, I treat every file the same. But if your situation needs more skill than a big bank can offer, that is exactly why I am here.</p>
+</div>
+<div class="placeholder">
+<p>Full expertise content coming soon.</p>
+</div>
+</div>
+
+<footer><div class="wrap">
+<div class="footer-top">
+<div><div class="footer-brand"><img src="../kellibrooke_wordmark.png" alt="Kellibrooke" style="height:32px;width:auto"></div><div class="footer-sub">Kellibrooke Mortgage Partners, LLC<br>NMLS #2022197<br>(512) 350-9124<br>case.laviolette@gmail.com<br>kellibrookemortgage.com<br><a href="https://nmlsconsumeraccess.org" target="_blank">NMLS Consumer Access</a></div></div>
+<div class="footer-cols">
+<div class="footer-col"><h4>Programs</h4><a href="#">Conventional</a><a href="#">FHA Loans</a><a href="#">VA Loans</a><a href="#">Jumbo</a><a href="#">Self-Employed</a><a href="#">Refinance</a></div>
+<div class="footer-col"><h4>Resources</h4><a href="#">First-Time Buyers</a><a href="#">Down Payment Help</a><a href="#">Current Info</a><a href="#">FAQ</a></div>
+<div class="footer-col"><h4>Company</h4><a href="/about/">About Me</a><a href="#">Contact</a><a href="#">Privacy Policy</a><a href="#">Disclosures</a></div>
+</div>
+</div>
+<div class="footer-legal"><div class="eho-box"><img src="../equal-housing-opportunity-logo-1200w.png" alt="Equal Housing Opportunity" style="width:32px;height:auto"></div><div class="footer-legal-text">Equal Housing Opportunity. All loans subject to credit approval. Rates and terms subject to change without notice. This is not a commitment to lend. Kellibrooke Mortgage Partners, LLC is a residential mortgage lender licensed by the State of Texas. Individual loan originator Case Laviolette (NMLS #2025459) is licensed in Texas.</div></div>
+<div class="footer-complaint">Consumers wishing to file a complaint against a company or a residential mortgage loan originator should complete and send a complaint form to the Texas Department of Savings and Mortgage Lending, 2601 North Lamar, Suite 201, Austin, Texas 78705. Complaint forms and instructions may be obtained from the Department's website at <a href="https://www.sml.texas.gov" target="_blank">www.sml.texas.gov</a>. A toll-free consumer hotline is available at 1-877-276-5550.</div>
+<div class="footer-bottom">&copy; 2026 Kellibrooke Mortgage Partners, LLC. All rights reserved. NMLS #2022197.</div>
+</div></footer>
+
+<script>
+document.addEventListener('keydown',function(e){
+if(e.key==='Escape'){var mm=document.getElementById('mobileMenu');if(mm&&mm.classList.contains('open'))mm.classList.remove('open')}
+});
+</script>
+</body>
+</html>
