@@ -42,6 +42,47 @@ nav{position:sticky;top:0;z-index:50;background:rgba(248,245,239,0.85);backdrop-
 .placeholder{padding:60px 0 120px;text-align:center;color:var(--muted);font-size:15px}
 .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--gold);text-decoration:none;font-weight:500;font-size:14px;margin-bottom:32px}
 .back-link:hover{gap:10px}
+
+/* Bio */
+.bio{max-width:720px;margin:0 auto;padding-bottom:60px}
+.bio p{font-size:16px;color:var(--muted);line-height:1.85;font-weight:300;margin-bottom:20px}
+
+/* How I Work */
+.how-section{padding:60px 0;border-top:1px solid var(--border)}
+.how-section h2{font-family:'DM Serif Display',serif;font-size:clamp(24px,3.5vw,34px);color:var(--forest);margin-bottom:40px;text-align:center}
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:800px;margin:0 auto}
+.how-block h3{font-family:'DM Serif Display',serif;font-size:18px;color:var(--forest);margin-bottom:6px}
+.how-block p{font-size:14px;color:var(--muted);line-height:1.75;font-weight:300}
+
+/* Stats */
+.stats-bar{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;padding:60px 0;border-top:1px solid var(--border)}
+.stat-pill{background:var(--white);border-radius:14px;padding:24px 16px;text-align:center;box-shadow:0 8px 30px rgba(26,58,42,0.08),0 2px 6px rgba(26,58,42,0.04)}
+.stat-num{font-family:'DM Serif Display',serif;font-size:26px;color:var(--forest)}
+.stat-label{font-size:11px;color:var(--muted);font-weight:500;margin-top:4px}
+
+/* Service area */
+.area{max-width:720px;margin:0 auto;padding:40px 0 60px}
+.area h2{font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,30px);color:var(--forest);margin-bottom:14px}
+.area p{font-size:15px;color:var(--muted);line-height:1.8;font-weight:300}
+
+/* Bottom CTA */
+.about-cta{text-align:center;padding:60px 0 80px;border-top:1px solid var(--border)}
+.about-cta h2{font-family:'DM Serif Display',serif;font-size:clamp(26px,4vw,38px);color:var(--forest);margin-bottom:12px}
+.about-cta p{font-size:16px;color:var(--muted);max-width:560px;margin:0 auto 8px;font-weight:300;line-height:1.75}
+.about-cta .contact-line{font-size:15px;color:var(--forest);font-weight:600;margin:20px 0 28px}
+.about-cta .contact-line a{color:var(--gold);text-decoration:none}
+.btn-primary{background:var(--gold);color:var(--white);padding:16px 36px;border-radius:10px;font-size:16px;font-weight:600;text-decoration:none;transition:all 0.25s;display:inline-flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;box-shadow:0 4px 16px rgba(201,168,76,0.2)}
+.btn-primary:hover{background:var(--gold-hover);transform:translateY(-3px);box-shadow:0 8px 28px rgba(201,168,76,0.35)}
+.btn-outline{background:transparent;color:var(--forest);padding:16px 36px;border-radius:10px;font-size:16px;font-weight:500;text-decoration:none;border:1.5px solid var(--border);transition:all 0.25s;font-family:'Outfit',sans-serif}
+.btn-outline:hover{border-color:var(--forest);transform:translateY(-2px)}
+
+@media(max-width:900px){
+.how-grid{grid-template-columns:1fr;gap:24px}
+.stats-bar{grid-template-columns:repeat(3,1fr);gap:10px}
+.stat-num{font-size:22px}
+.stat-label{font-size:10px}
+.bio p{font-size:15px}
+}
 footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0 32px;box-shadow:0 -4px 24px rgba(26,58,42,0.03)}
 .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;padding-bottom:32px;border-bottom:1px solid var(--border);margin-bottom:24px;flex-wrap:wrap}
 .footer-brand{margin-bottom:10px}
@@ -91,11 +132,62 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <a href="/kellibrooke-website/" class="back-link">&larr; Home</a>
 <div class="sec-label">Meet Your Broker</div>
 <h1>I'm Case Laviolette. I run Kellibrooke.</h1>
-<p>No big team. No call center. When you call Kellibrooke in Austin, you get me. I handle your file from mortgage pre-approval to closing, and I pick up my phone.</p>
+<p>One broker. One phone number. Every file handled personally from the first conversation to the closing table.</p>
 </div>
-<div class="placeholder">
-<p>Full about page coming soon.</p>
+
+<div class="bio">
+<p>Kellibrooke has been around for decades. It was a family company long before I took it over. Built, run, and eventually shelved for twenty years. I reopened it in 2020 under the same name and the same entity, continuing my mother's legacy.</p>
+<p>I came up in this business learning how to process loans myself. Not how to sell them. How to build them. Reading tax returns line by line. Reading lender guidelines the way underwriters read them. Structuring files so they don't fall apart in review. Negotiating with lenders when they push back. That's why I don't hand your file to a processor. I am the processor. I built the loan, I know every page in it, and I can defend every number in it when it matters.</p>
+<p>When you call Kellibrooke, you get me. Not a receptionist, not a junior associate, not an automated system. I take the application, I build the file, I talk to the underwriter, I manage the timeline, and I show up at closing knowing every detail because I touched every piece of it. Something goes sideways at 9pm on a Thursday, I'm the one who picks up.</p>
+<p>The files I built this business on are the ones other lenders won't touch. Self-employed borrowers whose tax returns don't tell the real story. Investors structuring DSCR loans across multiple properties. 1099 workers with five income streams and no W-2. People who got turned down somewhere else and were told to come back in a year. Those files take skill. That's why Kellibrooke exists.</p>
+<p>You do not pay my fee. The lender does. No processing fees, no admin fees, no broker charges on your side of the table. I tell every client this upfront because it changes the math on whether a broker makes sense. It almost always does.</p>
 </div>
+
+<div class="how-section">
+<h2>How I work differently.</h2>
+<div class="how-grid">
+<div class="how-block">
+<h3>One person, start to finish.</h3>
+<p>No hand-off to a processor you've never met. No "your loan officer is unavailable." I handle your file personally from pre-approval to closing, and I answer my phone.</p>
+</div>
+<div class="how-block">
+<h3>I shop your loan for you.</h3>
+<p>A bank gives you their rate. That's it. I submit your profile across my entire lender network and bring you back the best option. Different lenders price different files differently. A borrower a bank turns down at one rate might get approved at a better rate somewhere else. That's the whole point of using a broker.</p>
+</div>
+<div class="how-block">
+<h3>You don't pay my fee.</h3>
+<p>My compensation comes from the lender, not from you. No processing fees, no admin fees, no junk charges that show up on your closing disclosure that weren't on your original estimate. What I quote you is what you'll see at the table.</p>
+</div>
+<div class="how-block">
+<h3>I'll tell you the truth.</h3>
+<p>If your bank already has the best deal, I'll say so. If your credit needs six more months of work before you should apply, I'll say that too. I'd rather lose a deal today and earn your trust for the next ten years than close a loan that isn't right for you.</p>
+</div>
+</div>
+</div>
+
+<div class="stats-bar">
+<div class="stat-pill"><div class="stat-num">1,400+</div><div class="stat-label">Loans closed by Kellibrooke</div></div>
+<div class="stat-pill"><div class="stat-num">5 days</div><div class="stat-label">Fastest clear-to-close</div></div>
+<div class="stat-pill"><div class="stat-num">21 days</div><div class="stat-label">Average closing timeline</div></div>
+<div class="stat-pill"><div class="stat-num">$0</div><div class="stat-label">Junk fees charged. Ever.</div></div>
+<div class="stat-pill"><div class="stat-num">TX</div><div class="stat-label">Licensed — NMLS #2025459</div></div>
+</div>
+
+<div class="area">
+<h2>Where I work.</h2>
+<p>I'm based in Austin and most of my business comes from the metro. Round Rock, Cedar Park, Georgetown, Pflugerville, Leander, Kyle, Buda, Dripping Springs, Lakeway, Bee Cave, Bastrop, and everywhere in between. But I'm licensed across all of Texas, so if you're buying in San Antonio, Houston, Dallas, or anywhere else in the state, I can handle it. Same service, same phone number, same person.</p>
+</div>
+
+<div class="about-cta">
+<h2>Got a scenario? Send it over.</h2>
+<p>Call me, text me, or email me what you're working with. I'll tell you where you stand and what your options look like. No application required. No credit pull. Just a straight answer from someone who does this every day.</p>
+<div class="contact-line">(512) 350-9124 &middot; <a href="mailto:case.laviolette@gmail.com">case.laviolette@gmail.com</a></div>
+<div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+<a href="/kellibrooke-website/contact/" class="btn-primary">Send Me Your Scenario &rarr;</a>
+<a href="tel:5123509124" class="btn-outline">Call Me</a>
+</div>
+</div>
+
 </div>
 
 <footer><div class="wrap">
