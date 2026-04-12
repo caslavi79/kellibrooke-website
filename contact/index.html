@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Kellibrooke Mortgage Partners</title>
 <meta name="description" content="Get in touch with Case Laviolette at Kellibrooke Mortgage Partners. Call, text, or send your scenario. Austin TX mortgage broker. NMLS #2022197.">
+<meta property="og:title" content="Contact Kellibrooke Mortgage Partners">
+<meta property="og:description" content="Call, text, or send your scenario. Austin mortgage broker Case Laviolette. (512) 350-9124. NMLS #2022197.">
+<meta property="og:image" content="../og-image.jpg">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://kellibrookemortgage.com/contact/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -115,6 +120,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 .footer-top{flex-direction:column}
 .footer-cols{flex-direction:column;gap:20px}
 }
+@media(prefers-reduced-motion:reduce){
+*{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+}
 </style>
 </head>
 <body>
@@ -132,7 +140,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <a href="/kellibrooke-website/" class="back-link">&larr; Home</a>
 <div class="sec-label">Get In Touch</div>
 <h1>Send me your scenario.</h1>
-<p>I don't need to pull your credit to tell you where rates are. Call, text, or fill this out — same person either way.</p>
+<p>I don't need to pull your credit to tell you where rates are. Call, text, or fill this out. Same person either way.</p>
 </div>
 
 <div class="direct-contact">
@@ -184,9 +192,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <div class="form-section">
 <label class="form-label">Preferred term</label>
 <div class="chip-group" id="termChips">
-<div class="chip" onclick="toggleChip(this)">30-year</div>
-<div class="chip" onclick="toggleChip(this)">15-year</div>
-<div class="chip" onclick="toggleChip(this)">20-year</div>
+<div class="chip" onclick="toggleChip(this)">Shorter term</div>
+<div class="chip" onclick="toggleChip(this)">Standard term</div>
 <div class="chip" onclick="toggleChip(this)">Not sure</div>
 </div>
 <input type="hidden" name="term" id="termField">
@@ -195,10 +202,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <div class="form-section">
 <label class="form-label">Down payment (if you know)</label>
 <div class="chip-group" id="downChips">
-<div class="chip" onclick="toggleChip(this)">0% (VA/USDA)</div>
-<div class="chip" onclick="toggleChip(this)">3-5%</div>
-<div class="chip" onclick="toggleChip(this)">10-15%</div>
-<div class="chip" onclick="toggleChip(this)">20%+</div>
+<div class="chip" onclick="toggleChip(this)">As little as possible</div>
+<div class="chip" onclick="toggleChip(this)">Some saved up</div>
+<div class="chip" onclick="toggleChip(this)">Putting down a lot</div>
 <div class="chip" onclick="toggleChip(this)">Not sure yet</div>
 </div>
 <input type="hidden" name="down_payment" id="downField">
@@ -218,7 +224,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 
 <div class="form-section">
 <label class="form-label">Anything else I should know?</label>
-<textarea name="message" class="form-input" placeholder="Property details, timeline, questions — whatever helps me help you."></textarea>
+<textarea name="message" class="form-input" placeholder="Property details, timeline, questions. Whatever helps me help you."></textarea>
 </div>
 
 <button type="submit" class="form-submit">Send My Scenario &rarr;</button>
