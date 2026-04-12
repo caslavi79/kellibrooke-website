@@ -42,6 +42,23 @@ nav{position:sticky;top:0;z-index:50;background:rgba(248,245,239,0.85);backdrop-
 .placeholder{padding:60px 0 120px;text-align:center;color:var(--muted);font-size:15px}
 .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--gold);text-decoration:none;font-weight:500;font-size:14px;margin-bottom:32px}
 .back-link:hover{gap:10px}
+.program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding-bottom:80px}
+.program-card{background:var(--white);border-radius:18px;padding:32px 28px;box-shadow:0 8px 30px rgba(26,58,42,0.08),0 2px 6px rgba(26,58,42,0.04);transition:all 0.3s;border:1.5px solid transparent;display:flex;flex-direction:column}
+.program-card:hover{box-shadow:0 20px 50px rgba(26,58,42,0.12),0 4px 10px rgba(26,58,42,0.06);transform:translateY(-4px);border-color:var(--gold)}
+.program-card .card-title{font-family:'DM Serif Display',serif;font-size:20px;color:var(--forest);margin-bottom:10px}
+.program-card .card-body{font-size:14px;color:var(--muted);line-height:1.75;font-weight:300;flex:1}
+.program-card .card-cta{margin-top:16px;font-size:13px;color:var(--gold);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:gap 0.15s}
+.program-card:hover .card-cta{gap:8px}
+.programs-bottom{text-align:center;padding:0 0 80px}
+.programs-bottom p{font-size:16px;color:var(--muted);margin-bottom:24px;font-weight:300}
+.btn-primary{background:var(--gold);color:var(--white);padding:16px 36px;border-radius:10px;font-size:16px;font-weight:600;text-decoration:none;transition:all 0.25s;display:inline-flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;box-shadow:0 4px 16px rgba(201,168,76,0.2)}
+.btn-primary:hover{background:var(--gold-hover);transform:translateY(-3px);box-shadow:0 8px 28px rgba(201,168,76,0.35)}
+@media(max-width:900px){
+.program-grid{grid-template-columns:1fr;gap:12px}
+.program-card{padding:24px 20px}
+.program-card .card-title{font-size:18px}
+.program-card .card-body{font-size:13px}
+}
 footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0 32px;box-shadow:0 -4px 24px rgba(26,58,42,0.03)}
 .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;padding-bottom:32px;border-bottom:1px solid var(--border);margin-bottom:24px;flex-wrap:wrap}
 .footer-brand{margin-bottom:10px}
@@ -90,12 +107,91 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <div class="page-hero">
 <a href="/kellibrooke-website/" class="back-link">&larr; Home</a>
 <div class="sec-label">Loan Programs</div>
-<h1>Whatever your situation, there is a loan for it.</h1>
-<p>I match you with the right program at the lowest cost across my full lender network.</p>
+<h1>Every loan program. One broker who knows all of them.</h1>
+<p>I have access to conventional, government, jumbo, investor, and specialty programs across my entire lender network. I match you with the right one and the right lender for your situation.</p>
 </div>
-<div class="placeholder">
-<p>Full loan programs content coming soon.</p>
+
+<div class="program-grid">
+
+<div class="program-card">
+<div class="card-title">Conventional</div>
+<div class="card-body">The standard. If you have solid credit and some money to put down, this is probably where you land. Conventional loans offer the best rates in most scenarios and the most flexibility on property types. It's the workhorse of mortgage lending for a reason. I price these across my full lender network to make sure you're not leaving money on the table.</div>
+<a href="/kellibrooke-website/programs/conventional/" class="card-cta">Conventional loans &rarr;</a>
 </div>
+
+<div class="program-card">
+<div class="card-title">FHA</div>
+<div class="card-body">FHA exists for a reason. Flexible credit requirements, low down payment options, and qualifying ratios that give you room to breathe. Built for first-time buyers and anyone who needs a wider path to approval. If another lender told you your credit isn't good enough or your debt is too high, there's a good chance they just didn't want to do the work. I do.</div>
+<a href="/kellibrooke-website/programs/fha/" class="card-cta">FHA loans &rarr;</a>
+</div>
+
+<div class="program-card">
+<div class="card-title">VA</div>
+<div class="card-body">Zero down. No PMI. The single best mortgage product that exists. If you served, this benefit is yours and you should use it. I know VA loans inside and out. Entitlement calculations, funding fee exemptions, using your benefit a second or third time, buying with partial entitlement. Most lenders fumble VA files because they don't do enough of them. I do plenty.</div>
+<a href="/kellibrooke-website/programs/va/" class="card-cta">VA loans &rarr;</a>
+</div>
+
+<div class="program-card">
+<div class="card-title">USDA</div>
+<div class="card-body">Zero down for eligible rural areas. And a lot of areas near Austin qualify that people don't expect. Bastrop, Elgin, Liberty Hill, parts of Hutto, Wimberley, and more. I check USDA eligibility on every property before we go down this road. If your area qualifies, this is one of the best deals in lending. If it doesn't, I'll find the next best option.</div>
+<a href="/kellibrooke-website/programs/usda/" class="card-cta">USDA loans &rarr;</a>
+</div>
+
+<div class="program-card">
+<div class="card-title">Jumbo</div>
+<div class="card-body">Above $832,750 in Texas, you're in jumbo territory. Westlake, Tarrytown, Lakeway, Barton Creek, Lost Creek. Jumbo underwriting is pickier, but the rates are more competitive than most people expect. I work with lenders who specialize in jumbo pricing and I know what underwriters at that level want to see. If you're buying or refinancing at scale, I handle these regularly.</div>
+<a href="/kellibrooke-website/programs/jumbo/" class="card-cta">Jumbo loans &rarr;</a>
+</div>
+
+<div class="program-card">
+<div class="card-title">Self-Employed / Bank Statement</div>
+<div class="card-body">Your business does well but your tax returns don't show it because your accountant did their job. Bank statement loans skip the tax returns entirely and qualify you based on 12 to 24 months of deposits. I calculate your qualifying income from your actual cash flow, not your adjusted gross income. If you've been told you don't make enough on paper, this is probably the fix.</div>
+<a href="/kellibrooke-website/programs/bank-statement/" class="card-cta">Bank statement loans &rarr;</a>
+</div>
+
+<div class="program-card">
+<div class="card-title">DSCR / Investment Property</div>
+<div class="card-body">DSCR loans qualify based on the rental property's income, not yours. No tax returns. No W-2s. No explaining every LLC you own. If the rent covers the mortgage payment, you're in the conversation. I work with investors buying their second property and investors buying their twentieth. Same process, same attention, same phone number.</div>
+<a href="/kellibrooke-website/programs/dscr/" class="card-cta">DSCR loans &rarr;</a>
+</div>
+
+<div class="program-card">
+<div class="card-title">Refinance (Rate and Term)</div>
+<div class="card-body">You locked a rate when you had no choice and now you want to fix it. Or your financial picture has changed and you want better terms. I'll pull your current loan details, run the numbers, and tell you straight whether a refinance saves you money. If it does, we move. If it doesn't, I'll tell you exactly what rate you'd need to hit before it makes sense.</div>
+<a href="/kellibrooke-website/programs/refinance/" class="card-cta">Refinance options &rarr;</a>
+</div>
+
+<div class="program-card">
+<div class="card-title">Cash-Out Refinance</div>
+<div class="card-body">You've built equity. Now you want to use it. Renovations, paying off high-interest debt, funding a business, buying another property. I'll show you how much you can pull, what it does to your payment, and whether the math actually works in your favor. Not every cash-out makes sense. I'll tell you if yours does or doesn't.</div>
+<a href="/kellibrooke-website/programs/cash-out-refinance/" class="card-cta">Cash-out refi &rarr;</a>
+</div>
+
+<div class="program-card">
+<div class="card-title">Construction Loans</div>
+<div class="card-body">Financing a new build from the ground up. Construction-to-permanent loans start as a construction line, fund the build through a draw schedule, then convert to a permanent mortgage when the house is done. One closing instead of two. I manage the draw schedule, coordinate with your builder and the lender, and keep the timeline on track so your project doesn't stall waiting on funding.</div>
+<a href="/kellibrooke-website/programs/construction/" class="card-cta">Construction loans &rarr;</a>
+</div>
+
+<div class="program-card">
+<div class="card-title">Renovation Loans (FHA 203k)</div>
+<div class="card-body">Buy a fixer and roll the renovation costs into one loan. Finance the purchase and the rehab together instead of buying the house, then scrambling to find a second loan for the work. I handle the contractor bids, the inspections, and the draw process. These loans have more moving parts than a standard purchase. That's exactly why you want one person managing the whole thing.</div>
+<a href="/kellibrooke-website/programs/renovation/" class="card-cta">Renovation loans &rarr;</a>
+</div>
+
+<div class="program-card">
+<div class="card-title">Non-QM / Alternative Documentation</div>
+<div class="card-body">For borrowers who don't fit the standard boxes. Asset depletion for retirees with wealth but no traditional income. Foreign national buyers. ITIN borrowers. Interest-only structures. Recent credit events with short waiting periods. If a conventional or government loan doesn't work for your situation, there is almost always another path. I know where to find it and which lenders will actually close it.</div>
+<a href="/kellibrooke-website/programs/non-qm/" class="card-cta">Non-QM options &rarr;</a>
+</div>
+
+</div>
+
+<div class="programs-bottom">
+<p>Not sure which program fits? Tell me your situation and I'll match you.</p>
+<a href="/kellibrooke-website/contact/" class="btn-primary">Send Me Your Scenario &rarr;</a>
+</div>
+
 </div>
 
 <footer><div class="wrap">
