@@ -324,13 +324,18 @@ h1{font-size:clamp(32px,8vw,44px);margin:0 0 20px;text-align:left}
 .modal-box{max-width:92%;padding:10px;border-radius:12px}
 .modal-close{top:-12px;right:-12px;width:30px;height:30px;font-size:16px}
 .hero-ctas a{width:100%}
+.act2-vid video{display:none}
 }
+.skip-link{position:absolute;top:-100px;left:16px;background:var(--forest);color:var(--white);padding:8px 16px;border-radius:6px;font-size:14px;z-index:100;text-decoration:none;transition:top 0.2s}
+.skip-link:focus{top:8px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){
 *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
 }
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
 <div class="shell"><div class="glob"></div><div class="glob"></div><div class="glob"></div><div class="glob"></div><div class="glob"></div></div>
 <div class="scroll">
 <nav><div class="nav-inner"><a href="#" class="nav-logo"><img src="kellibrooke_wordmark.png" alt="Kellibrooke" class="logo-kb"><img src="kellibrooke_line.png" alt="" class="logo-line"><img src="kellibrooke_mp.png" alt="Mortgage Partners" class="logo-mp"></a><div class="nav-links"><a href="/kellibrooke-website/expertise/" class="nav-link">Scenarios</a><a href="#how" class="nav-link" onclick="event.preventDefault();document.getElementById('how').scrollIntoView({behavior:'smooth',block:'start'})">How It Works</a><a href="/kellibrooke-website/programs/" class="nav-link">Loan Programs</a><a href="/kellibrooke-website/about/" class="nav-link">About Me</a><a href="/kellibrooke-website/contact/" class="nav-cta">Contact</a></div><button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
@@ -343,7 +348,7 @@ h1{font-size:clamp(32px,8vw,44px);margin:0 0 20px;text-align:left}
 </div>
 
 <!-- 1. HERO -->
-<div class="wrap"><div class="hero reveal">
+<div class="wrap" id="main-content"><div class="hero reveal">
 <div class="hero-badge">Austin Mortgage Broker <span>&middot;</span> NMLS #2022197</div>
 <h1>Your mortgage, explained in <em>plain English.</em></h1>
 <p class="hero-sub">I shop your loan across my lender network and present you with the best option. Austin&#39;s mortgage broker with no processing fees, no admin fees, and no surprises at closing.</p>
@@ -391,7 +396,7 @@ h1{font-size:clamp(32px,8vw,44px);margin:0 0 20px;text-align:left}
 </div>
 </div>
 </div>
-<div class="video-row" role="button" tabindex="0" onclick="openVidModal()" onkeydown="if(event.key==='Enter')openVidModal()">
+<div class="video-row" role="button" tabindex="0" onclick="openVidModal()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openVidModal()}">
 <div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fefcf9"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
 <div><div class="video-label">Watch client testimonial</div><div class="video-sub">Hear from real Kellibrooke clients in their own words</div></div>
 </div>
@@ -538,16 +543,19 @@ window.addEventListener('resize',setPin);
 
 function openVidModal(){
 var m=document.getElementById('vidModal');
+if(!m)return;
 var v=m.querySelector('video');
+if(!v)return;
 v.src='clients.mp4';
 m.classList.add('open');
-v.play();
+v.play().catch(function(){});
 v.focus();
 }
 function closeVidModal(){
 var m=document.getElementById('vidModal');
+if(!m)return;
 var v=m.querySelector('video');
-v.pause();
+if(v)v.pause();
 m.classList.remove('open');
 }
 document.addEventListener('keydown',function(e){
