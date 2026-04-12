@@ -508,7 +508,7 @@ window.addEventListener('resize',setPin);
 function openVidModal(){
 var m=document.getElementById('vidModal');
 var v=m.querySelector('video');
-if(!v.src)v.src='clients.mp4';
+if(!v.getAttribute('src'))v.setAttribute('src','clients.mp4');
 m.classList.add('open');
 v.focus();
 }
