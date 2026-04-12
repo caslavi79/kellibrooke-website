@@ -39,8 +39,49 @@ nav{position:sticky;top:0;z-index:50;background:rgba(248,245,239,0.85);backdrop-
 .page-hero .sec-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px}
 .page-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,48px);color:var(--forest);margin-bottom:16px;line-height:1.15}
 .page-hero p{font-size:17px;color:var(--muted);max-width:560px;margin:0 auto;font-weight:300;line-height:1.75}
-.placeholder{padding:60px 0 120px;text-align:center;color:var(--muted);font-size:15px}
 .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--gold);text-decoration:none;font-weight:500;font-size:14px;margin-bottom:32px}
+
+/* Direct contact */
+.direct-contact{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:32px 0 20px}
+.direct-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;border-radius:10px;font-size:16px;font-weight:600;text-decoration:none;transition:all 0.25s;font-family:'Outfit',sans-serif}
+.direct-btn.call{background:var(--gold);color:var(--white);box-shadow:0 4px 16px rgba(201,168,76,0.2)}
+.direct-btn.call:hover{background:var(--gold-hover);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,0.35)}
+.direct-btn.text{background:var(--white);color:var(--forest);border:1.5px solid var(--border)}
+.direct-btn.text:hover{border-color:var(--forest);transform:translateY(-2px)}
+.direct-note{text-align:center;font-size:13px;color:var(--muted);margin-bottom:48px}
+
+/* Divider */
+.or-divider{display:flex;align-items:center;gap:20px;margin:0 auto 48px;max-width:500px}
+.or-divider span{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:2px;text-transform:uppercase;flex-shrink:0}
+.or-divider::before,.or-divider::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* Form */
+.contact-form{max-width:600px;margin:0 auto;padding-bottom:80px}
+.form-section{margin-bottom:36px}
+.form-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px;display:block}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.form-input{width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:'Outfit',sans-serif;color:var(--bark);background:var(--white);transition:border-color 0.2s;outline:none}
+.form-input:focus{border-color:var(--gold)}
+.form-input::placeholder{color:var(--light-muted)}
+textarea.form-input{resize:vertical;min-height:100px}
+
+/* Chip selectors */
+.chip-group{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.chip{padding:10px 18px;border:1.5px solid var(--border);border-radius:100px;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;transition:all 0.2s;background:var(--white);user-select:none}
+.chip:hover{border-color:var(--gold);color:var(--forest)}
+.chip.selected{background:var(--forest);color:var(--white);border-color:var(--forest)}
+.chip-other{padding:10px 18px;border:1.5px dashed var(--border);border-radius:100px;font-size:13px;color:var(--light-muted);background:transparent;cursor:pointer;transition:all 0.2s}
+.chip-other:hover{border-color:var(--gold);color:var(--muted)}
+
+/* Submit */
+.form-submit{width:100%;padding:16px;border:none;border-radius:10px;background:var(--gold);color:var(--white);font-size:16px;font-weight:600;font-family:'Outfit',sans-serif;cursor:pointer;transition:all 0.25s;box-shadow:0 4px 16px rgba(201,168,76,0.2)}
+.form-submit:hover{background:var(--gold-hover);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,0.35)}
+.form-note{text-align:center;font-size:12px;color:var(--muted);margin-top:12px}
+
+@media(max-width:900px){
+.form-row{grid-template-columns:1fr}
+.direct-btn{width:100%;justify-content:center}
+}
 .back-link:hover{gap:10px}
 footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0 32px;box-shadow:0 -4px 24px rgba(26,58,42,0.03)}
 .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;padding-bottom:32px;border-bottom:1px solid var(--border);margin-bottom:24px;flex-wrap:wrap}
@@ -91,11 +132,99 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <a href="/kellibrooke-website/" class="back-link">&larr; Home</a>
 <div class="sec-label">Get In Touch</div>
 <h1>Send me your scenario.</h1>
-<p>I don't need to pull your credit to tell you the current rates. Quick conversation — I'll tell you where you stand.</p>
+<p>I don't need to pull your credit to tell you where rates are. Call, text, or fill this out — same person either way.</p>
 </div>
-<div class="placeholder">
-<p>Contact form coming soon.</p>
+
+<div class="direct-contact">
+<a href="tel:5123509124" class="direct-btn call"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call (512) 350-9124</a>
+<a href="sms:5123509124" class="direct-btn text"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Text Me</a>
 </div>
+<div class="direct-note">I answer my own phone. No receptionist, no voicemail tree.</div>
+
+<div class="or-divider"><span>Or fill this out</span></div>
+
+<form class="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+
+<div class="form-section">
+<label class="form-label">Your Info</label>
+<div class="form-row">
+<input type="text" name="name" class="form-input" placeholder="Name" required>
+<input type="tel" name="phone" class="form-input" placeholder="Phone number" required>
+</div>
+<input type="email" name="email" class="form-input" placeholder="Email" style="margin-bottom:12px" required>
+</div>
+
+<div class="form-section">
+<label class="form-label">What brings you here?</label>
+<div class="chip-group" id="purposeChips">
+<div class="chip" onclick="toggleChip(this)">Buying my first home</div>
+<div class="chip" onclick="toggleChip(this)">Buying (not first time)</div>
+<div class="chip" onclick="toggleChip(this)">Refinancing</div>
+<div class="chip" onclick="toggleChip(this)">Cash-out refi</div>
+<div class="chip" onclick="toggleChip(this)">Investment property</div>
+<div class="chip" onclick="toggleChip(this)">Self-employed</div>
+<div class="chip" onclick="toggleChip(this)">Just exploring</div>
+</div>
+<input type="hidden" name="purpose" id="purposeField">
+</div>
+
+<div class="form-section">
+<label class="form-label">Loan program interest?</label>
+<div class="chip-group" id="programChips">
+<div class="chip" onclick="toggleChip(this)">Conventional</div>
+<div class="chip" onclick="toggleChip(this)">FHA</div>
+<div class="chip" onclick="toggleChip(this)">VA</div>
+<div class="chip" onclick="toggleChip(this)">USDA</div>
+<div class="chip" onclick="toggleChip(this)">Jumbo</div>
+<div class="chip" onclick="toggleChip(this)">Not sure</div>
+</div>
+<input type="hidden" name="program" id="programField">
+</div>
+
+<div class="form-section">
+<label class="form-label">Preferred term</label>
+<div class="chip-group" id="termChips">
+<div class="chip" onclick="toggleChip(this)">30-year</div>
+<div class="chip" onclick="toggleChip(this)">15-year</div>
+<div class="chip" onclick="toggleChip(this)">20-year</div>
+<div class="chip" onclick="toggleChip(this)">Not sure</div>
+</div>
+<input type="hidden" name="term" id="termField">
+</div>
+
+<div class="form-section">
+<label class="form-label">Down payment (if you know)</label>
+<div class="chip-group" id="downChips">
+<div class="chip" onclick="toggleChip(this)">0% (VA/USDA)</div>
+<div class="chip" onclick="toggleChip(this)">3-5%</div>
+<div class="chip" onclick="toggleChip(this)">10-15%</div>
+<div class="chip" onclick="toggleChip(this)">20%+</div>
+<div class="chip" onclick="toggleChip(this)">Not sure yet</div>
+</div>
+<input type="hidden" name="down_payment" id="downField">
+</div>
+
+<div class="form-section">
+<label class="form-label">Where are you in the process?</label>
+<div class="chip-group" id="stageChips">
+<div class="chip" onclick="toggleChip(this)">Just starting to look</div>
+<div class="chip" onclick="toggleChip(this)">Found a home / making offers</div>
+<div class="chip" onclick="toggleChip(this)">Under contract</div>
+<div class="chip" onclick="toggleChip(this)">Pre-approved elsewhere</div>
+<div class="chip" onclick="toggleChip(this)">Want to refinance</div>
+</div>
+<input type="hidden" name="stage" id="stageField">
+</div>
+
+<div class="form-section">
+<label class="form-label">Anything else I should know?</label>
+<textarea name="message" class="form-input" placeholder="Property details, timeline, questions — whatever helps me help you."></textarea>
+</div>
+
+<button type="submit" class="form-submit">Send My Scenario &rarr;</button>
+<div class="form-note">No credit pull. No commitment. I'll get back to you personally.</div>
+
+</form>
 </div>
 
 <footer><div class="wrap">
@@ -115,6 +244,32 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <script>
 document.addEventListener('keydown',function(e){
 if(e.key==='Escape'){var mm=document.getElementById('mobileMenu');if(mm&&mm.classList.contains('open'))mm.classList.remove('open')}
+});
+
+function toggleChip(el){
+el.classList.toggle('selected');
+// Update hidden field for the parent group
+var group=el.parentElement;
+var hidden=group.nextElementSibling;
+if(hidden&&hidden.type==='hidden'){
+var selected=group.querySelectorAll('.selected');
+var vals=[];
+selected.forEach(function(c){vals.push(c.textContent)});
+hidden.value=vals.join(', ');
+}
+}
+
+// On submit, collect all chip selections
+document.querySelector('.contact-form').addEventListener('submit',function(){
+['purposeChips','programChips','termChips','downChips','stageChips'].forEach(function(id){
+var group=document.getElementById(id);
+if(!group)return;
+var hidden=group.nextElementSibling;
+var selected=group.querySelectorAll('.selected');
+var vals=[];
+selected.forEach(function(c){vals.push(c.textContent)});
+if(hidden)hidden.value=vals.join(', ');
+});
 });
 </script>
 </body>
