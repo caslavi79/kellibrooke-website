@@ -23,7 +23,7 @@
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--forest:#1a3a2a;--forest-08:rgba(26,58,42,0.08);--forest-05:rgba(26,58,42,0.05);--cream:#f8f5ef;--white:#fefcf9;--gold:#c9a84c;--gold-hover:#b8943f;--gold-text:#a68a3a;--bark:#3d2b1f;--sage:#7a9a82;--sand:#9e9282;--muted:#6b6356;--light-muted:#8a7e6b;--border:#e8e2d8;--lift:0 8px 30px rgba(26,58,42,0.08),0 20px 60px rgba(26,58,42,0.05),0 2px 6px rgba(26,58,42,0.04);--lift-hover:0 20px 50px rgba(26,58,42,0.12),0 40px 80px rgba(26,58,42,0.08),0 4px 10px rgba(26,58,42,0.06)}
+:root{--forest:#1a3a2a;--forest-08:rgba(26,58,42,0.08);--forest-05:rgba(26,58,42,0.05);--cream:#f8f5ef;--white:#fefcf9;--gold:#c9a84c;--gold-btn:#8a6d2b;--gold-btn-hover:#7a5f22;--gold-hover:#b8943f;--gold-text:#a68a3a;--bark:#3d2b1f;--sage:#7a9a82;--sand:#9e9282;--muted:#6b6356;--light-muted:#8a7e6b;--border:#e8e2d8;--lift:0 8px 30px rgba(26,58,42,0.08),0 20px 60px rgba(26,58,42,0.05),0 2px 6px rgba(26,58,42,0.04);--lift-hover:0 20px 50px rgba(26,58,42,0.12),0 40px 80px rgba(26,58,42,0.08),0 4px 10px rgba(26,58,42,0.06)}
 html{scroll-behavior:smooth}
 body{font-family:'Outfit',sans-serif;color:var(--bark);line-height:1.6;overflow:hidden;margin:0;height:100vh}
 .shell{position:fixed;inset:0;background:var(--cream);overflow:hidden;z-index:0}
@@ -54,8 +54,8 @@ nav{position:sticky;top:0;z-index:50;background:rgba(248,245,239,0.85);backdrop-
 .nav-link:hover{color:var(--forest)}
 .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--gold);transition:width 0.2s}
 .nav-link:hover::after{width:100%}
-.nav-cta{background:var(--gold);color:var(--white);padding:11px 24px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;font-family:'Outfit',sans-serif}
-.nav-cta:hover{background:var(--gold-hover);transform:translateY(-1px);box-shadow:0 4px 16px rgba(201,168,76,0.3)}
+.nav-cta{background:var(--gold-btn);color:var(--white);padding:11px 24px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;font-family:'Outfit',sans-serif}
+.nav-cta:hover{background:var(--gold-btn-hover);transform:translateY(-1px);box-shadow:0 4px 16px rgba(201,168,76,0.3)}
 .wrap{max-width:1100px;margin:0 auto;padding:0 40px}
 .section{padding:80px 0}
 .sec-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-text);font-weight:600;margin-bottom:10px}
@@ -65,8 +65,8 @@ nav{position:sticky;top:0;z-index:50;background:rgba(248,245,239,0.85);backdrop-
 .card:hover{box-shadow:var(--lift-hover);transform:translateY(-6px)}
 .card-title{font-family:'DM Serif Display',serif;font-size:22px;color:var(--forest);margin-bottom:8px}
 .card-body{font-size:14px;color:var(--muted);line-height:1.75;font-weight:300}
-.btn-primary{background:var(--gold);color:var(--white);padding:16px 36px;border-radius:10px;font-size:16px;font-weight:600;text-decoration:none;transition:all 0.25s;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;font-family:'Outfit',sans-serif;box-shadow:0 4px 16px rgba(201,168,76,0.2)}
-.btn-primary:hover{background:var(--gold-hover);transform:translateY(-3px);box-shadow:0 8px 28px rgba(201,168,76,0.35)}
+.btn-primary{background:var(--gold-btn);color:var(--white);padding:16px 36px;border-radius:10px;font-size:16px;font-weight:600;text-decoration:none;transition:all 0.25s;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;font-family:'Outfit',sans-serif;box-shadow:0 4px 16px rgba(201,168,76,0.2)}
+.btn-primary:hover{background:var(--gold-btn-hover);transform:translateY(-3px);box-shadow:0 8px 28px rgba(201,168,76,0.35)}
 .btn-outline{background:transparent;color:var(--forest);padding:16px 36px;border-radius:10px;font-size:16px;font-weight:500;text-decoration:none;border:1.5px solid var(--border);transition:all 0.25s;cursor:pointer;font-family:'Outfit',sans-serif}
 .btn-outline:hover{border-color:var(--forest);background:var(--forest-05);transform:translateY(-2px)}
 .hero{padding:100px 0 40px;text-align:center}
@@ -123,7 +123,7 @@ h1 em{font-style:italic;color:var(--gold)}
 .mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:rgba(248,245,239,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:20px 24px;z-index:49;border-bottom:1px solid var(--border);flex-direction:column;gap:16px}
 .mobile-menu.open{display:flex}
 .mobile-menu a{font-size:16px;color:var(--bark);text-decoration:none;font-weight:500;padding:8px 0}
-.mobile-menu a:last-child{background:var(--gold);color:var(--white);padding:12px 24px;border-radius:8px;font-weight:600;text-align:center}
+.mobile-menu a:last-child{background:var(--gold-btn);color:var(--white);padding:12px 24px;border-radius:8px;font-weight:600;text-align:center}
 /* Call/Text popup */
 .ct-overlay{position:fixed;inset:0;background:rgba(10,10,10,0.6);z-index:200;display:none;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
 .ct-overlay.open{display:flex}
@@ -132,8 +132,8 @@ h1 em{font-style:italic;color:var(--gold)}
 .ct-box p{font-size:13px;color:var(--muted);margin-bottom:24px}
 .ct-btns{display:flex;flex-direction:column;gap:10px}
 .ct-btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;font-family:'Outfit',sans-serif;transition:all 0.2s}
-.ct-btn.call{background:var(--gold);color:var(--white)}
-.ct-btn.call:hover{background:var(--gold-hover);transform:translateY(-2px)}
+.ct-btn.call{background:var(--gold-btn);color:var(--white)}
+.ct-btn.call:hover{background:var(--gold-btn-hover);transform:translateY(-2px)}
 .ct-btn.text{background:var(--white);color:var(--forest);border:1.5px solid var(--border)}
 .ct-btn.text:hover{border-color:var(--forest);transform:translateY(-2px)}
 .ct-close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:20px;color:var(--muted);cursor:pointer}
@@ -222,10 +222,10 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 .footer-col a:hover{color:var(--gold)}
 .footer-legal{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px}
 .eho-box{flex-shrink:0}
-.footer-legal-text{font-size:11px;color:var(--muted);line-height:1.7}
-.footer-complaint{font-size:10px;color:var(--light-muted);line-height:1.7;padding:16px 0;border-top:1px solid var(--border)}
-.footer-complaint a{color:var(--gold);text-decoration:none}
-.footer-bottom{text-align:center;font-size:11px;color:var(--sand);padding-top:16px}
+.footer-legal-text{font-size:13px;color:var(--muted);line-height:1.7}
+.footer-complaint{font-size:13px;color:var(--muted);line-height:1.7;padding:16px 0;border-top:1px solid var(--border)}
+.footer-complaint a{color:var(--gold-text);text-decoration:underline}
+.footer-bottom{text-align:center;font-size:13px;color:var(--muted);padding-top:16px}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .r1{transition-delay:0.08s}.r2{transition-delay:0.16s}.r3{transition-delay:0.24s}
@@ -456,7 +456,7 @@ h1{font-size:clamp(32px,8vw,44px);margin:0 0 20px;text-align:left}
 <div class="wrap" id="programs" style="scroll-margin-top:90px"><div class="section">
 <div class="sec-label reveal">Loan Programs</div>
 <div class="sec-title reveal">Whatever your situation, there is a loan for it.</div>
-<div class="sec-desc reveal">I match you with the right program at the lowest cost across my full lender network.</div>
+<div class="sec-desc reveal">I match you with the right program at competitive cost across my full lender network.</div>
 <div class="programs">
 <a class="program reveal" href="#"><div class="program-name">Conventional</div><div class="program-desc">The go-to for strong credit. Low down payment options available. Best rates in most scenarios.</div><div class="program-link">Learn more &rarr;</div></a>
 <a class="program reveal r1" href="#"><div class="program-name">FHA Loans</div><div class="program-desc">Low down payment. Flexible credit requirements. Built for first-time buyers who need room to qualify.</div><div class="program-link">Learn more &rarr;</div></a>
@@ -511,7 +511,7 @@ h1{font-size:clamp(32px,8vw,44px);margin:0 0 20px;text-align:left}
 <!-- FOOTER -->
 <footer><div class="wrap">
 <div class="footer-top">
-<div><div class="footer-brand"><img src="kellibrooke_wordmark.png" alt="Kellibrooke" style="height:32px;width:auto"></div><div class="footer-sub">Kellibrooke Mortgage Partners, LLC<br>NMLS #2022197<br>(512) 350-9124<br>case.laviolette@gmail.com<br>kellibrookemortgage.com<br><a href="https://nmlsconsumeraccess.org" target="_blank">NMLS Consumer Access</a></div></div>
+<div><div class="footer-brand"><img src="kellibrooke_wordmark.png" alt="Kellibrooke" style="height:32px;width:auto"></div><div class="footer-sub">Kellibrooke Mortgage Partners, LLC<br>NMLS #2022197<br>(512) 350-9124<br>case.laviolette@gmail.com<br>kellibrookemortgage.com<br><a href="https://nmlsconsumeraccess.org" target="_blank" rel="noopener noreferrer">NMLS Consumer Access</a></div></div>
 <div class="footer-cols">
 <div class="footer-col"><h4>Programs</h4><a href="#">Conventional</a><a href="#">FHA Loans</a><a href="#">VA Loans</a><a href="#">Jumbo</a><a href="#">Self-Employed</a><a href="#">Refinance</a></div>
 <div class="footer-col"><h4>Resources</h4><a href="#">First-Time Buyers</a><a href="#">Down Payment Help</a><a href="#">Current Info</a><a href="#">FAQ</a></div>
@@ -519,7 +519,7 @@ h1{font-size:clamp(32px,8vw,44px);margin:0 0 20px;text-align:left}
 </div>
 </div>
 <div class="footer-legal"><div class="eho-box"><img src="equal-housing-opportunity-logo-1200w.png" alt="Equal Housing Opportunity" style="width:32px;height:auto"></div><div class="footer-legal-text">Equal Housing Opportunity. All loans subject to credit approval. Rates and terms subject to change without notice. This is not a commitment to lend. Kellibrooke Mortgage Partners, LLC is a residential mortgage lender licensed by the State of Texas. Individual loan originator Case Laviolette (NMLS #2025459) is licensed in Texas.</div></div>
-<div class="footer-complaint">Consumers wishing to file a complaint against a company or a residential mortgage loan originator should complete and send a complaint form to the Texas Department of Savings and Mortgage Lending, 2601 North Lamar, Suite 201, Austin, Texas 78705. Complaint forms and instructions may be obtained from the Department's website at <a href="https://www.sml.texas.gov" target="_blank">www.sml.texas.gov</a>. A toll-free consumer hotline is available at 1-877-276-5550.</div>
+<div class="footer-complaint">CONSUMERS WISHING TO FILE A COMPLAINT AGAINST A COMPANY OR A RESIDENTIAL MORTGAGE LOAN ORIGINATOR SHOULD COMPLETE AND SEND A COMPLAINT FORM TO THE TEXAS DEPARTMENT OF SAVINGS AND MORTGAGE LENDING, 2601 NORTH LAMAR, SUITE 201, AUSTIN, TEXAS 78705. COMPLAINT FORMS AND INSTRUCTIONS MAY BE OBTAINED FROM THE DEPARTMENT'S WEBSITE AT <a href="https://www.sml.texas.gov" target="_blank" rel="noopener noreferrer">WWW.SML.TEXAS.GOV</a>. A TOLL-FREE CONSUMER HOTLINE IS AVAILABLE AT 1-877-276-5550.</div>
 <div class="footer-bottom">&copy; 2026 Kellibrooke Mortgage Partners, LLC. All rights reserved. NMLS #2022197.</div>
 </div></footer>
 
@@ -576,7 +576,7 @@ m.classList.remove('open');
 document.addEventListener('keydown',function(e){
 if(e.key==='Escape'){
 var m=document.getElementById('vidModal');
-if(m.classList.contains('open'))closeVidModal();
+if(m&&m.classList.contains('open'))closeVidModal();
 var ct=document.getElementById('ctModal');
 if(ct&&ct.classList.contains('open'))ct.classList.remove('open');
 var mm=document.getElementById('mobileMenu');

@@ -17,7 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--forest:#1a3a2a;--forest-08:rgba(26,58,42,0.08);--forest-05:rgba(26,58,42,0.05);--cream:#f8f5ef;--white:#fefcf9;--gold:#c9a84c;--gold-hover:#b8943f;--gold-text:#a68a3a;--bark:#3d2b1f;--sage:#7a9a82;--sand:#9e9282;--muted:#6b6356;--light-muted:#8a7e6b;--border:#e8e2d8}
+:root{--forest:#1a3a2a;--forest-08:rgba(26,58,42,0.08);--forest-05:rgba(26,58,42,0.05);--cream:#f8f5ef;--white:#fefcf9;--gold:#c9a84c;--gold-hover:#b8943f;--gold-btn:#8a6d2b;--gold-btn-hover:#7a5f22;--gold-text:#a68a3a;--bark:#3d2b1f;--sage:#7a9a82;--sand:#9e9282;--muted:#6b6356;--light-muted:#8a7e6b;--border:#e8e2d8}
 html{scroll-behavior:smooth}
 body{font-family:'Outfit',sans-serif;color:var(--bark);line-height:1.6;margin:0;background:var(--cream)}
 nav{position:sticky;top:0;z-index:50;background:rgba(248,245,239,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
@@ -33,14 +33,14 @@ nav{position:sticky;top:0;z-index:50;background:rgba(248,245,239,0.85);backdrop-
 .nav-link:hover::after{width:100%}
 .nav-link.active{color:var(--forest);font-weight:600}
 .nav-link.active::after{width:100%}
-.nav-cta{background:var(--gold);color:var(--white);padding:11px 24px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;font-family:'Outfit',sans-serif}
-.nav-cta:hover{background:var(--gold-hover);transform:translateY(-1px);box-shadow:0 4px 16px rgba(201,168,76,0.3)}
+.nav-cta{background:var(--gold-btn);color:var(--white);padding:11px 24px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;font-family:'Outfit',sans-serif}
+.nav-cta:hover{background:var(--gold-btn-hover);transform:translateY(-1px);box-shadow:0 4px 16px rgba(201,168,76,0.3)}
 .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px}
 .hamburger span{display:block;width:22px;height:2px;background:var(--forest);margin:5px 0;transition:all 0.3s}
 .mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:rgba(248,245,239,0.97);backdrop-filter:blur(20px);padding:20px 24px;z-index:49;border-bottom:1px solid var(--border);flex-direction:column;gap:16px}
 .mobile-menu.open{display:flex}
 .mobile-menu a{font-size:16px;color:var(--bark);text-decoration:none;font-weight:500;padding:8px 0}
-.mobile-menu a:last-child{background:var(--gold);color:var(--white);padding:12px 24px;border-radius:8px;font-weight:600;text-align:center}
+.mobile-menu a:last-child{background:var(--gold-btn);color:var(--white);padding:12px 24px;border-radius:8px;font-weight:600;text-align:center}
 .wrap{max-width:1100px;margin:0 auto;padding:0 40px}
 .page-hero{padding:80px 0 60px;text-align:center}
 .page-hero .sec-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-text);font-weight:600;margin-bottom:10px}
@@ -51,8 +51,8 @@ nav{position:sticky;top:0;z-index:50;background:rgba(248,245,239,0.85);backdrop-
 /* Direct contact */
 .direct-contact{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:32px 0 20px}
 .direct-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;border-radius:10px;font-size:16px;font-weight:600;text-decoration:none;transition:all 0.25s;font-family:'Outfit',sans-serif}
-.direct-btn.call{background:var(--gold);color:var(--white);box-shadow:0 4px 16px rgba(201,168,76,0.2)}
-.direct-btn.call:hover{background:var(--gold-hover);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,0.35)}
+.direct-btn.call{background:var(--gold-btn);color:var(--white);box-shadow:0 4px 16px rgba(201,168,76,0.2)}
+.direct-btn.call:hover{background:var(--gold-btn-hover);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,0.35)}
 .direct-btn.text{background:var(--white);color:var(--forest);border:1.5px solid var(--border)}
 .direct-btn.text:hover{border-color:var(--forest);transform:translateY(-2px)}
 .direct-note{text-align:center;font-size:13px;color:var(--muted);margin-bottom:48px}
@@ -81,8 +81,8 @@ textarea.form-input{resize:vertical;min-height:100px}
 .chip-other:hover{border-color:var(--gold);color:var(--muted)}
 
 /* Submit */
-.form-submit{width:100%;padding:16px;border:none;border-radius:10px;background:var(--gold);color:var(--white);font-size:16px;font-weight:600;font-family:'Outfit',sans-serif;cursor:pointer;transition:all 0.25s;box-shadow:0 4px 16px rgba(201,168,76,0.2)}
-.form-submit:hover{background:var(--gold-hover);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,0.35)}
+.form-submit{width:100%;padding:16px;border:none;border-radius:10px;background:var(--gold-btn);color:var(--white);font-size:16px;font-weight:600;font-family:'Outfit',sans-serif;cursor:pointer;transition:all 0.25s;box-shadow:0 4px 16px rgba(201,168,76,0.2)}
+.form-submit:hover{background:var(--gold-btn-hover);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,0.35)}
 .form-note{text-align:center;font-size:12px;color:var(--muted);margin-top:12px}
 
 @media(max-width:900px){
@@ -101,10 +101,10 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 .footer-col a:hover{color:var(--gold)}
 .footer-legal{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px}
 .eho-box{flex-shrink:0}
-.footer-legal-text{font-size:11px;color:var(--muted);line-height:1.7}
-.footer-complaint{font-size:10px;color:var(--light-muted);line-height:1.7;padding:16px 0;border-top:1px solid var(--border)}
-.footer-complaint a{color:var(--gold);text-decoration:none}
-.footer-bottom{text-align:center;font-size:11px;color:var(--sand);padding-top:16px}
+.footer-legal-text{font-size:13px;color:var(--muted);line-height:1.7}
+.footer-complaint{font-size:13px;color:var(--muted);line-height:1.7;padding:16px 0;border-top:1px solid var(--border)}
+.footer-complaint a{color:var(--gold-text);text-decoration:underline}
+.footer-bottom{text-align:center;font-size:13px;color:var(--muted);padding-top:16px}
 @media(max-width:900px){
 .nav-inner{padding:0 16px;height:56px}
 .nav-logo{gap:6px}
@@ -125,9 +125,12 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 @media(prefers-reduced-motion:reduce){
 *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
 }
+.skip-link{position:absolute;top:-100px;left:16px;background:var(--forest);color:var(--white);padding:8px 16px;border-radius:6px;font-size:14px;z-index:200;text-decoration:none;transition:top 0.2s}
+.skip-link:focus{top:8px}
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
 <nav><div class="nav-inner"><a href="/kellibrooke-website/" class="nav-logo"><img src="../kellibrooke_wordmark.png" alt="Kellibrooke" class="logo-kb"><img src="../kellibrooke_line.png" alt="" class="logo-line"><img src="../kellibrooke_mp.png" alt="Mortgage Partners" class="logo-mp"></a><div class="nav-links"><a href="/kellibrooke-website/?to=how" class="nav-link">How It Works</a><a href="/kellibrooke-website/expertise/" class="nav-link">Scenarios</a><a href="/kellibrooke-website/programs/" class="nav-link">Loan Programs</a><a href="/kellibrooke-website/about/" class="nav-link">About Me</a><a href="/kellibrooke-website/contact/" class="nav-cta">Contact</a></div><button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
 <div class="mobile-menu" id="mobileMenu">
 <a href="/kellibrooke-website/?to=how">How It Works</a>
@@ -137,7 +140,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <a href="/kellibrooke-website/contact/">Contact</a>
 </div>
 
-<div class="wrap">
+<div class="wrap" id="main-content">
 <div class="page-hero">
 <a href="/kellibrooke-website/" class="back-link">&larr; Home</a>
 <div class="sec-label">Get In Touch</div>
@@ -156,24 +159,24 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <form class="contact-form" action="https://formspree.io/f/placeholder" method="POST">
 
 <div class="form-section">
-<label class="form-label">Your Info</label>
-<div class="form-row">
-<input type="text" name="name" class="form-input" placeholder="Name" required>
-<input type="tel" name="phone" class="form-input" placeholder="Phone number" required>
+<label class="form-label" id="info-label">Your Info</label>
+<div class="form-row" role="group" aria-labelledby="info-label">
+<input type="text" name="name" id="name" class="form-input" placeholder="Name" aria-label="Name" required>
+<input type="tel" name="phone" id="phone" class="form-input" placeholder="Phone number" aria-label="Phone number" required>
 </div>
-<input type="email" name="email" class="form-input" placeholder="Email" style="margin-bottom:12px" required>
+<input type="email" name="email" id="email" class="form-input" placeholder="Email" aria-label="Email" style="margin-bottom:12px" required>
 </div>
 
 <div class="form-section">
 <label class="form-label">What brings you here?</label>
 <div class="chip-group" id="purposeChips">
-<div class="chip" onclick="toggleChip(this)">Buying my first home</div>
-<div class="chip" onclick="toggleChip(this)">Buying (not first time)</div>
-<div class="chip" onclick="toggleChip(this)">Refinancing</div>
-<div class="chip" onclick="toggleChip(this)">Cash-out refi</div>
-<div class="chip" onclick="toggleChip(this)">Investment property</div>
-<div class="chip" onclick="toggleChip(this)">Self-employed</div>
-<div class="chip" onclick="toggleChip(this)">Just exploring</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Buying my first home</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Buying (not first time)</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Refinancing</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Cash-out refi</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Investment property</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Self-employed</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Just exploring</div>
 </div>
 <input type="hidden" name="purpose" id="purposeField">
 </div>
@@ -181,12 +184,12 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <div class="form-section">
 <label class="form-label">Loan program interest?</label>
 <div class="chip-group" id="programChips">
-<div class="chip" onclick="toggleChip(this)">Conventional</div>
-<div class="chip" onclick="toggleChip(this)">FHA</div>
-<div class="chip" onclick="toggleChip(this)">VA</div>
-<div class="chip" onclick="toggleChip(this)">USDA</div>
-<div class="chip" onclick="toggleChip(this)">Jumbo</div>
-<div class="chip" onclick="toggleChip(this)">Not sure</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Conventional</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">FHA</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">VA</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">USDA</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Jumbo</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Not sure</div>
 </div>
 <input type="hidden" name="program" id="programField">
 </div>
@@ -194,9 +197,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <div class="form-section">
 <label class="form-label">Preferred term</label>
 <div class="chip-group" id="termChips">
-<div class="chip" onclick="toggleChip(this)">Shorter term</div>
-<div class="chip" onclick="toggleChip(this)">Standard term</div>
-<div class="chip" onclick="toggleChip(this)">Not sure</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Shorter term</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Standard term</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Not sure</div>
 </div>
 <input type="hidden" name="term" id="termField">
 </div>
@@ -204,10 +207,10 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <div class="form-section">
 <label class="form-label">Down payment (if you know)</label>
 <div class="chip-group" id="downChips">
-<div class="chip" onclick="toggleChip(this)">As little as possible</div>
-<div class="chip" onclick="toggleChip(this)">Some saved up</div>
-<div class="chip" onclick="toggleChip(this)">Putting down a lot</div>
-<div class="chip" onclick="toggleChip(this)">Not sure yet</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">As little as possible</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Some saved up</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Putting down a lot</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Not sure yet</div>
 </div>
 <input type="hidden" name="down_payment" id="downField">
 </div>
@@ -215,18 +218,18 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <div class="form-section">
 <label class="form-label">Where are you in the process?</label>
 <div class="chip-group" id="stageChips">
-<div class="chip" onclick="toggleChip(this)">Just starting to look</div>
-<div class="chip" onclick="toggleChip(this)">Found a home / making offers</div>
-<div class="chip" onclick="toggleChip(this)">Under contract</div>
-<div class="chip" onclick="toggleChip(this)">Pre-approved elsewhere</div>
-<div class="chip" onclick="toggleChip(this)">Want to refinance</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Just starting to look</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Found a home / making offers</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Under contract</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Pre-approved elsewhere</div>
+<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Want to refinance</div>
 </div>
 <input type="hidden" name="stage" id="stageField">
 </div>
 
 <div class="form-section">
-<label class="form-label">Anything else I should know?</label>
-<textarea name="message" class="form-input" placeholder="Property details, timeline, questions. Whatever helps me help you."></textarea>
+<label class="form-label" for="message">Anything else I should know?</label>
+<textarea name="message" id="message" class="form-input" placeholder="Property details, timeline, questions. Whatever helps me help you." aria-label="Additional details"></textarea>
 </div>
 
 <button type="submit" class="form-submit">Send My Scenario &rarr;</button>
@@ -237,15 +240,15 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 
 <footer><div class="wrap">
 <div class="footer-top">
-<div><div class="footer-brand"><img src="../kellibrooke_wordmark.png" alt="Kellibrooke" style="height:32px;width:auto"></div><div class="footer-sub">Kellibrooke Mortgage Partners, LLC<br>NMLS #2022197<br>(512) 350-9124<br>case.laviolette@gmail.com<br>kellibrookemortgage.com<br><a href="https://nmlsconsumeraccess.org" target="_blank">NMLS Consumer Access</a></div></div>
+<div><div class="footer-brand"><img src="../kellibrooke_wordmark.png" alt="Kellibrooke" style="height:32px;width:auto"></div><div class="footer-sub">Kellibrooke Mortgage Partners, LLC<br>NMLS #2022197<br>(512) 350-9124<br>case.laviolette@gmail.com<br>kellibrookemortgage.com<br><a href="https://nmlsconsumeraccess.org" target="_blank" rel="noopener noreferrer">NMLS Consumer Access</a></div></div>
 <div class="footer-cols">
 <div class="footer-col"><h4>Programs</h4><a href="#">Conventional</a><a href="#">FHA Loans</a><a href="#">VA Loans</a><a href="#">Jumbo</a><a href="#">Self-Employed</a><a href="#">Refinance</a></div>
 <div class="footer-col"><h4>Resources</h4><a href="#">First-Time Buyers</a><a href="#">Down Payment Help</a><a href="#">Current Info</a><a href="#">FAQ</a></div>
-<div class="footer-col"><h4>Company</h4><a href="/kellibrooke-website/about/">About Me</a><a href="#">Contact</a><a href="#">Privacy Policy</a><a href="#">Disclosures</a></div>
+<div class="footer-col"><h4>Company</h4><a href="/kellibrooke-website/about/">About Me</a><a href="/kellibrooke-website/contact/">Contact</a><a href="#">Privacy Policy</a><a href="#">Disclosures</a></div>
 </div>
 </div>
 <div class="footer-legal"><div class="eho-box"><img src="../equal-housing-opportunity-logo-1200w.png" alt="Equal Housing Opportunity" style="width:32px;height:auto"></div><div class="footer-legal-text">Equal Housing Opportunity. All loans subject to credit approval. Rates and terms subject to change without notice. This is not a commitment to lend. Kellibrooke Mortgage Partners, LLC is a residential mortgage lender licensed by the State of Texas. Individual loan originator Case Laviolette (NMLS #2025459) is licensed in Texas.</div></div>
-<div class="footer-complaint">Consumers wishing to file a complaint against a company or a residential mortgage loan originator should complete and send a complaint form to the Texas Department of Savings and Mortgage Lending, 2601 North Lamar, Suite 201, Austin, Texas 78705. Complaint forms and instructions may be obtained from the Department's website at <a href="https://www.sml.texas.gov" target="_blank">www.sml.texas.gov</a>. A toll-free consumer hotline is available at 1-877-276-5550.</div>
+<div class="footer-complaint">CONSUMERS WISHING TO FILE A COMPLAINT AGAINST A COMPANY OR A RESIDENTIAL MORTGAGE LOAN ORIGINATOR SHOULD COMPLETE AND SEND A COMPLAINT FORM TO THE TEXAS DEPARTMENT OF SAVINGS AND MORTGAGE LENDING, 2601 NORTH LAMAR, SUITE 201, AUSTIN, TEXAS 78705. COMPLAINT FORMS AND INSTRUCTIONS MAY BE OBTAINED FROM THE DEPARTMENT'S WEBSITE AT <a href="https://www.sml.texas.gov" target="_blank" rel="noopener noreferrer">WWW.SML.TEXAS.GOV</a>. A TOLL-FREE CONSUMER HOTLINE IS AVAILABLE AT 1-877-276-5550.</div>
 <div class="footer-bottom">&copy; 2026 Kellibrooke Mortgage Partners, LLC. All rights reserved. NMLS #2022197.</div>
 </div></footer>
 

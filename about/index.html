@@ -18,8 +18,8 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --cream:#f8f5ef;--white:#fefcf9;--forest:#1a3a2a;--gold:#c9a84c;--gold-hover:#b8943f;
-  --bark:#3d2b1f;--sage:#7a9a82;--sand:#9e9282;--muted:#6b6356;--light-muted:#8a7e6b;--gold-text:#a68a3a;--border:#e8e2d8;--dark:#0f120e;
+  --cream:#f8f5ef;--white:#fefcf9;--forest:#1a3a2a;--forest-08:rgba(26,58,42,0.08);--gold:#c9a84c;--gold-hover:#b8943f;--gold-btn:#8a6d2b;--gold-btn-hover:#7a5f22;--gold-text:#a68a3a;
+  --bark:#3d2b1f;--sage:#7a9a82;--sand:#9e9282;--muted:#6b6356;--light-muted:#8a7e6b;--border:#e8e2d8;--dark:#0f120e;
   --display:'DM Serif Display',Georgia,serif;--body:'Outfit',system-ui,sans-serif;
   --shadow:0 8px 30px rgba(26,58,42,0.08),0 20px 60px rgba(26,58,42,0.05),0 2px 6px rgba(26,58,42,0.04);
   --shadow-hover:0 12px 40px rgba(26,58,42,0.12),0 24px 70px rgba(26,58,42,0.07),0 4px 10px rgba(26,58,42,0.06);
@@ -45,8 +45,8 @@ button{font-family:var(--body);cursor:pointer;border:none;background:none}
 .nav-links a:hover::after{width:100%}
 .nav-links a.active{color:var(--forest);font-weight:600}
 .nav-links a.active::after{width:100%}
-.nav-cta{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:#fff;font-size:14px;font-weight:600;padding:11px 24px;border-radius:8px;transition:background .2s}
-.nav-cta:hover{background:var(--gold-hover)}
+.nav-cta{display:inline-flex;align-items:center;gap:6px;background:var(--gold-btn);color:#fff;font-size:14px;font-weight:600;padding:11px 24px;border-radius:8px;transition:background .2s}
+.nav-cta:hover{background:var(--gold-btn-hover)}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
 .hamburger span{width:22px;height:2px;background:var(--forest);border-radius:2px}
 .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--cream);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:28px}
@@ -134,8 +134,8 @@ button{font-family:var(--body);cursor:pointer;border:none;background:none}
 .bottom-cta h2{font-family:var(--display);font-size:36px;color:var(--cream);margin-bottom:16px}
 .bottom-cta .cta-sub{font-size:16px;color:var(--sand);line-height:1.7;margin-bottom:36px}
 .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
-.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;font-size:15px;font-weight:600;padding:14px 28px;border-radius:10px;transition:background .2s}
-.btn-gold:hover{background:var(--gold-hover)}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold-btn);color:#fff;font-size:15px;font-weight:600;padding:14px 28px;border-radius:10px;transition:background .2s}
+.btn-gold:hover{background:var(--gold-btn-hover)}
 .btn-outline{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--sand);color:var(--cream);font-size:15px;font-weight:600;padding:14px 28px;border-radius:10px;transition:border-color .2s,color .2s}
 .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
 .bottom-contact{font-size:14px;color:var(--sand)}
@@ -151,15 +151,15 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 .footer-sub{font-size:12px;color:var(--muted);line-height:1.7;max-width:280px}
 .footer-sub a{color:var(--gold);text-decoration:none}
 .footer-cols{display:flex;gap:48px}
-.footer-col h4{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--forest);font-weight:700;margin-bottom:14px}
+.footer-col h4{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--forest);font-weight:700;margin-bottom:14px}
 .footer-col a{display:block;font-size:13px;color:var(--muted);text-decoration:none;margin-bottom:9px;transition:color 0.15s}
 .footer-col a:hover{color:var(--gold)}
 .footer-legal{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px}
 .eho-box{flex-shrink:0}
-.footer-legal-text{font-size:11px;color:var(--muted);line-height:1.7}
-.footer-complaint{font-size:10px;color:var(--muted);line-height:1.7;padding:16px 0;border-top:1px solid var(--border)}
-.footer-complaint a{color:var(--gold);text-decoration:none}
-.footer-bottom{text-align:center;font-size:11px;color:var(--sand);padding-top:16px}
+.footer-legal-text{font-size:13px;color:var(--muted);line-height:1.7}
+.footer-complaint{font-size:13px;color:var(--muted);line-height:1.7;padding:16px 0;border-top:1px solid var(--border)}
+.footer-complaint a{color:var(--gold-text);text-decoration:underline}
+.footer-bottom{text-align:center;font-size:13px;color:var(--muted);padding-top:16px}
 
 /* Video modal */
 .video-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.9);z-index:200;align-items:center;justify-content:center}
@@ -207,10 +207,12 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 @media(prefers-reduced-motion:reduce){
 *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
 }
+.skip-link{position:absolute;top:-100px;left:16px;background:var(--forest);color:var(--white);padding:8px 16px;border-radius:6px;font-size:14px;z-index:200;text-decoration:none;transition:top 0.2s}
+.skip-link:focus{top:8px}
 </style>
 </head>
 <body>
-
+<a href="#main-content" class="skip-link">Skip to content</a>
 <nav class="nav">
 <div class="nav-inner">
 <a href="/kellibrooke-website/" class="nav-logo"><img src="../kellibrooke_wordmark.png" alt="Kellibrooke" class="logo-kb"><img src="../kellibrooke_line.png" alt="" class="logo-line"><img src="../kellibrooke_mp.png" alt="Mortgage Partners" class="logo-mp"></a>
@@ -228,7 +230,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <a href="/kellibrooke-website/contact/" onclick="this.parentElement.classList.remove('open')">Contact</a>
 </div>
 
-<section class="hero">
+<section class="hero" id="main-content">
 <div class="hero-inner">
 <div class="hero-text reveal">
 <div class="section-label">Meet Your Broker</div>
@@ -324,7 +326,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 
 <footer><div class="footer-inner">
 <div class="footer-top">
-<div><div class="footer-brand"><img src="../kellibrooke_wordmark.png" alt="Kellibrooke"></div><div class="footer-sub">Kellibrooke Mortgage Partners, LLC<br>NMLS #2022197<br>(512) 350-9124<br>case.laviolette@gmail.com<br>kellibrookemortgage.com<br><a href="https://nmlsconsumeraccess.org" target="_blank">NMLS Consumer Access</a></div></div>
+<div><div class="footer-brand"><img src="../kellibrooke_wordmark.png" alt="Kellibrooke"></div><div class="footer-sub">Kellibrooke Mortgage Partners, LLC<br>NMLS #2022197<br>(512) 350-9124<br>case.laviolette@gmail.com<br>kellibrookemortgage.com<br><a href="https://nmlsconsumeraccess.org" target="_blank" rel="noopener noreferrer">NMLS Consumer Access</a></div></div>
 <div class="footer-cols">
 <div class="footer-col"><h4>Programs</h4><a href="#">Conventional</a><a href="#">FHA Loans</a><a href="#">VA Loans</a><a href="#">Jumbo</a><a href="#">Self-Employed</a><a href="#">Refinance</a></div>
 <div class="footer-col"><h4>Resources</h4><a href="#">First-Time Buyers</a><a href="#">Down Payment Help</a><a href="#">Current Info</a><a href="#">FAQ</a></div>
@@ -332,7 +334,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 </div>
 </div>
 <div class="footer-legal"><div class="eho-box"><img src="../equal-housing-opportunity-logo-1200w.png" alt="Equal Housing Opportunity" style="width:32px;height:auto"></div><div class="footer-legal-text">Equal Housing Opportunity. All loans subject to credit approval. Rates and terms subject to change without notice. This is not a commitment to lend. Kellibrooke Mortgage Partners, LLC is a residential mortgage lender licensed by the State of Texas. Individual loan originator Case Laviolette (NMLS #2025459) is licensed in Texas.</div></div>
-<div class="footer-complaint">Consumers wishing to file a complaint against a company or a residential mortgage loan originator should complete and send a complaint form to the Texas Department of Savings and Mortgage Lending, 2601 North Lamar, Suite 201, Austin, Texas 78705. Complaint forms and instructions may be obtained from the Department's website at <a href="https://www.sml.texas.gov" target="_blank">www.sml.texas.gov</a>. A toll-free consumer hotline is available at 1-877-276-5550.</div>
+<div class="footer-complaint">CONSUMERS WISHING TO FILE A COMPLAINT AGAINST A COMPANY OR A RESIDENTIAL MORTGAGE LOAN ORIGINATOR SHOULD COMPLETE AND SEND A COMPLAINT FORM TO THE TEXAS DEPARTMENT OF SAVINGS AND MORTGAGE LENDING, 2601 NORTH LAMAR, SUITE 201, AUSTIN, TEXAS 78705. COMPLAINT FORMS AND INSTRUCTIONS MAY BE OBTAINED FROM THE DEPARTMENT'S WEBSITE AT <a href="https://www.sml.texas.gov" target="_blank" rel="noopener noreferrer">WWW.SML.TEXAS.GOV</a>. A TOLL-FREE CONSUMER HOTLINE IS AVAILABLE AT 1-877-276-5550.</div>
 <div class="footer-bottom">&copy; 2026 Kellibrooke Mortgage Partners, LLC. All rights reserved. NMLS #2022197.</div>
 </div></footer>
 
