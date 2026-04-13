@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Page Not Found | Kellibrooke Mortgage Partners</title>
-<link rel="icon" href="favicon.ico" type="image/png">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -96,12 +96,12 @@ footer .wrap{max-width:1100px;margin:0 auto}
 <div class="nav-inner">
 <a href="/kellibrooke-website/" class="nav-logo"><img src="kellibrooke_wordmark.png" alt="Kellibrooke" class="logo-kb"><img src="kellibrooke_line.png" alt="" class="logo-line"><img src="kellibrooke_mp.png" alt="Mortgage Partners" class="logo-mp"></a>
 <div class="nav-links"><a href="/kellibrooke-website/?to=how">How It Works</a><a href="/kellibrooke-website/expertise/">Scenarios</a><a href="/kellibrooke-website/programs/">Loan Programs</a><a href="/kellibrooke-website/about/">About Me</a><a href="/kellibrooke-website/contact/" class="nav-cta">Contact</a></div>
-<div class="hamburger" onclick="document.querySelector('.mobile-menu').classList.add('open')"><span></span><span></span><span></span></div>
+<button class="hamburger" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.mobile-menu');m.classList.add('open');this.setAttribute('aria-expanded','true')"><span></span><span></span><span></span></button>
 </div>
 </nav>
 
 <div class="mobile-menu">
-<div class="mobile-close" onclick="this.parentElement.classList.remove('open')">&times;</div>
+<button class="mobile-close" aria-label="Close menu" onclick="this.parentElement.classList.remove('open');document.querySelector('.hamburger').setAttribute('aria-expanded','false')">&times;</button>
 <a href="/kellibrooke-website/?to=how" onclick="this.parentElement.classList.remove('open')">How It Works</a>
 <a href="/kellibrooke-website/expertise/" onclick="this.parentElement.classList.remove('open')">Scenarios</a>
 <a href="/kellibrooke-website/programs/" onclick="this.parentElement.classList.remove('open')">Loan Programs</a>
