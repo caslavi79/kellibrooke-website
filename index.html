@@ -529,6 +529,19 @@ var s=document.querySelector('.scroll');
 var o=new IntersectionObserver(function(e){e.forEach(function(i){if(i.isIntersecting){i.target.classList.add('visible');o.unobserve(i.target)}})},{threshold:0.08,root:s});
 document.querySelectorAll('.reveal').forEach(function(el){o.observe(el)});
 
+// Handle ?to= param for cross-page scroll
+(function(){
+var p=new URLSearchParams(window.location.search);
+var t=p.get('to');
+if(t){
+  var el=document.getElementById(t);
+  if(el){
+    history.replaceState(null,'',window.location.pathname);
+    setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'})},100);
+  }
+}
+})();
+
 // Pin about section so full card is visible when stuck
 function setPin(){
 var pin=document.querySelector('.about-pin');
