@@ -38,8 +38,6 @@ button{font-family:var(--body);cursor:pointer;border:none;background:none}
 :focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:4px}
 .skip-link{position:absolute;top:-100px;left:16px;background:var(--forest);color:#fff;padding:8px 16px;border-radius:6px;font-size:14px;z-index:200;text-decoration:none;transition:top 0.2s}
 .skip-link:focus{top:8px}
-
-/* Nav */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(248,245,239,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 60px}
 .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
@@ -59,27 +57,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(248,245,239,
 .mobile-menu.open{display:flex}
 .mobile-menu a{font-size:16px;color:var(--bark);font-weight:500;padding:8px 0}
 .mobile-menu a:last-child{background:var(--gold);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;text-align:center}
-
-/* Page content */
 .page-wrap{max-width:800px;margin:0 auto;padding:100px 32px 60px}
 .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--gold);font-weight:500;font-size:14px;margin-bottom:32px;transition:gap 0.15s}
 .back-link:hover{gap:10px}
 .page-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-text);font-weight:600;margin-bottom:10px}
 .page-wrap h1{font-family:var(--display);font-size:clamp(28px,4.5vw,42px);color:var(--forest);line-height:1.15;margin-bottom:16px}
 .page-subtitle{font-size:17px;color:var(--muted);line-height:1.75;font-weight:300;margin-bottom:48px;max-width:640px}
-
-/* Sections */
 .content-section{margin-bottom:48px}
 .content-section h2{font-family:var(--display);font-size:24px;color:var(--forest);margin-bottom:16px}
 .content-section p{font-size:15px;color:var(--bark);line-height:1.8;margin-bottom:16px;font-weight:300}
-
-/* Detail cards */
 .details-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:48px}
 .detail-card{background:var(--white);border-radius:14px;padding:24px;box-shadow:var(--shadow)}
 .detail-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-text);font-weight:600;margin-bottom:8px}
 .detail-text{font-size:14px;color:var(--bark);line-height:1.7;font-weight:300}
-
-/* CTA */
+.faq-section{margin-bottom:48px}
+.faq-section h2{font-family:var(--display);font-size:24px;color:var(--forest);margin-bottom:24px}
+.faq-item{margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--border)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-family:var(--display);font-size:18px;color:var(--forest);margin-bottom:8px;line-height:1.3}
+.faq-a{font-size:15px;color:var(--bark);line-height:1.8;font-weight:300}
 .page-cta{background:var(--forest);border-radius:20px;padding:60px 40px;text-align:center;margin:48px 0}
 .page-cta h2{font-family:var(--display);font-size:28px;color:var(--cream);margin-bottom:12px}
 .page-cta p{font-size:15px;color:#c4b8a6;margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
@@ -88,8 +84,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(248,245,239,
 .btn-gold:hover{background:var(--gold-hover)}
 .btn-outline{border:1.5px solid rgba(255,255,255,0.25);color:#fff;padding:14px 32px;border-radius:10px;font-size:15px;font-weight:600;transition:all .2s}
 .btn-outline:hover{border-color:#fff}
-
-/* Footer */
 footer{background:var(--white);border-top:1px solid var(--border);padding:48px 32px 32px}
 .footer-inner{max-width:1100px;margin:0 auto}
 .footer-top{display:flex;gap:48px;margin-bottom:32px;flex-wrap:wrap}
@@ -106,7 +100,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 3
 .footer-complaint{font-size:13px;color:var(--muted);line-height:1.7;padding:16px 0;border-top:1px solid var(--border)}
 .footer-complaint a{color:var(--gold-text);text-decoration:underline}
 .footer-bottom{text-align:center;font-size:13px;color:var(--muted);padding-top:16px;border-top:1px solid var(--border)}
-
 @media(max-width:900px){
 .nav-inner{height:56px;padding:0 20px}
 .nav-links{display:none}
@@ -124,7 +117,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 3
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
-
 <nav>
 <div class="nav-inner">
 <a href="/kellibrooke-website/" class="nav-logo"><img src="../../kellibrooke_wordmark.png" alt="Kellibrooke" class="logo-kb"><img src="../../kellibrooke_line.png" alt="" class="logo-line"><img src="../../kellibrooke_mp.png" alt="Mortgage Partners" class="logo-mp"></a>
@@ -132,7 +124,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 3
 <button class="hamburger" aria-label="Menu" aria-expanded="false" onclick="var m=document.getElementById('mobileMenu');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))"><span></span><span></span><span></span></button>
 </div>
 </nav>
-
 <div class="mobile-menu" id="mobileMenu">
 <a href="/kellibrooke-website/?to=how">How It Works</a>
 <a href="/kellibrooke-website/expertise/">Scenarios</a>
@@ -149,27 +140,48 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 3
 
 <section class="content-section">
 <h2>Overview</h2>
-<p>Your business does well but your tax returns don't show it because your accountant did their job. Bank statement loans skip the tax returns entirely and qualify you based on 12 to 24 months of deposits.</p>
-<p>This page is being updated with detailed content. In the meantime, the overview above covers the essentials. For specifics about your situation, reach out directly.</p>
+<p>Your business does well. Your tax returns don't show it because your accountant minimized your taxable income — which is exactly what they're supposed to do. The problem is that mortgage lenders read those returns at face value.</p>
+<p>Bank statement loans skip the tax returns entirely and qualify you based on 12 or 24 months of actual bank deposits. Personal or business accounts. I calculate your qualifying income from your real cash flow, not your adjusted gross income.</p>
+<p>These loans typically require decent credit and a meaningful down payment. The rates are higher than conventional. But for a business owner who's been told they don't make enough on paper, this is usually the fix.</p>
 </section>
 
 <div class="details-grid">
-<div class="detail-card"><div class="detail-label">Who it's for</div><div class="detail-text">Self-employed borrowers, business owners, entrepreneurs whose tax returns understate real income.</div></div>
+<div class="detail-card"><div class="detail-label">Who it's for</div><div class="detail-text">Self-employed borrowers and business owners whose tax returns understate their real income.</div></div>
 <div class="detail-card"><div class="detail-label">Documentation</div><div class="detail-text">12 or 24 months of personal or business bank statements. No tax returns needed.</div></div>
-<div class="detail-card"><div class="detail-label">Income calculation</div><div class="detail-text">Based on actual deposits with an expense factor applied. Your real cash flow, not AGI.</div></div>
-<div class="detail-card"><div class="detail-label">Credit and down payment</div><div class="detail-text">Typically requires decent credit and a meaningful down payment.</div></div>
+<div class="detail-card"><div class="detail-label">Income calculation</div><div class="detail-text">Based on actual deposits with an expense factor applied. Your real cash flow, not your AGI.</div></div>
+<div class="detail-card"><div class="detail-label">Credit and down payment</div><div class="detail-text">Decent credit and a meaningful down payment typically required.</div></div>
 <div class="detail-card"><div class="detail-label">Why a broker matters</div><div class="detail-text">Every lender calculates bank statement income differently. I know which ones count the most.</div></div>
 </div>
 
 <section class="content-section">
 <h2>How I Handle This</h2>
-<p>I price every file across my full lender network. Different lenders have different appetites, different pricing, and different underwriting guidelines. I find the one that works best for your specific situation.</p>
-<p>You talk to me the entire time. No hand-off to a processor. No voicemail tree. One person, start to finish.</p>
+<p>I start by looking at your bank statements and calculating your qualifying income the way each lender would. Some use a flat expense factor. Others let you provide a CPA letter. The methodology matters because it changes how much income you qualify with.</p>
+<p>Then I match you with the lender that gives you the best combination of rate, income calculation, and terms. The difference between lenders on bank statement loans can be huge — sometimes tens of thousands in additional qualifying income.</p>
+</section>
+
+<section class="faq-section">
+<h2>Questions I Get</h2>
+<div class="faq-item">
+<h3 class="faq-q">Can I use personal or business bank statements?</h3>
+<p class="faq-a">Both. Some lenders prefer personal accounts, others work with business accounts. The income calculation differs depending on which you use. I run both scenarios and tell you which works better.</p>
+</div>
+<div class="faq-item">
+<h3 class="faq-q">How far back do the statements need to go?</h3>
+<p class="faq-a">Either 12 or 24 months depending on the lender and program. Some lenders offer better rates for 24-month documentation. I'll tell you which option makes the most sense for your situation.</p>
+</div>
+<div class="faq-item">
+<h3 class="faq-q">My income varies a lot month to month. Is that a problem?</h3>
+<p class="faq-a">Not inherently. Lenders look at the average across the full statement period. Some months will be high, some low. As long as the overall trend supports the loan amount, it works.</p>
+</div>
+<div class="faq-item">
+<h3 class="faq-q">Are the rates higher than conventional?</h3>
+<p class="faq-a">Yes, typically. You're trading the convenience of no tax returns for a somewhat higher rate. I'll show you the exact numbers so you can decide if the tradeoff makes sense.</p>
+</div>
 </section>
 
 <div class="page-cta">
-<h2>Got questions about bank statement loans?</h2>
-<p>Send me your scenario. I'll tell you where you stand and what your options look like. No application required. No credit pull.</p>
+<h2>Self-employed and tired of being told no?</h2>
+<p>Send me your last 12 months of bank statements. I'll calculate your qualifying income and tell you exactly what you can afford.</p>
 <div class="cta-buttons">
 <a href="/kellibrooke-website/contact/" class="btn-gold">Send Me Your Scenario &rarr;</a>
 <a href="tel:5123509124" class="btn-outline">Call Me</a>
@@ -192,7 +204,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 3
 <div class="footer-bottom">&copy; 2026 Kellibrooke Mortgage Partners, LLC. All rights reserved. NMLS #2022197.</div>
 </div>
 </footer>
-
 <script>
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){var mm=document.getElementById('mobileMenu');if(mm&&mm.classList.contains('open'))mm.classList.remove('open')}});
 </script>
