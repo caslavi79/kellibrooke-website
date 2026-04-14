@@ -588,16 +588,10 @@ cards.forEach(function(card){
 function setPin(){
 var pin=document.querySelector('.about-pin');
 if(!pin)return;
-var navH=68;
-// Mobile: always pin below the nav so the lock is visible.
-// Content taller than viewport scrolls naturally, then locks when its top reaches nav.
-if(window.matchMedia('(max-width:900px)').matches){
-  pin.style.top=navH+'px';
-  return;
-}
 var pinH=pin.offsetHeight;
 var viewH=window.innerHeight;
-// Desktop: if section fits below nav, pin at nav. Otherwise align bottom to viewport bottom.
+var navH=68;
+// If section fits below nav, pin at nav. Otherwise pin so bottom aligns with viewport bottom.
 var top=Math.min(navH, viewH-pinH-100);
 pin.style.top=top+'px';
 }
