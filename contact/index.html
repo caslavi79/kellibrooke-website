@@ -128,7 +128,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 .page-hero h1{font-size:28px}
 .page-hero p{font-size:15px}
 .footer-top{flex-direction:column}
-.footer-cols{flex-direction:column;gap:20px}
+.footer-cols{flex-direction:row;flex-wrap:wrap;gap:24px 20px}
+.footer-col{flex:0 0 calc(50% - 10px)}
 }
 @media(prefers-reduced-motion:reduce){
 *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
