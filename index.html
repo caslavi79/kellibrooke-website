@@ -319,8 +319,16 @@ h1{font-size:clamp(32px,8vw,44px);margin:0 0 20px;text-align:left}
 
 /* Act 2 overrides */
 .act2 .section{padding:48px 0}
-.act2 .steps .card{border-right:none;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+/* Steps accordion on mobile: vertical stacked, tap to expand */
+.act2 .steps .card{border-right:none;padding:18px 32px 18px 0;border-bottom:1px solid rgba(255,255,255,0.08);cursor:pointer;position:relative;display:flex;align-items:baseline;gap:16px;min-height:0;flex-wrap:wrap;transition:padding 0.3s ease}
 .act2 .steps .card:last-child{border-bottom:none}
+.act2 .steps .card .step-num{font-size:30px !important;margin-bottom:0;flex-shrink:0;min-width:44px;line-height:1}
+.act2 .steps .card .card-title{font-size:16px !important;margin:0;flex:1}
+.act2 .steps .card .card-body{display:none;flex-basis:100%;margin-top:4px;padding-left:60px;font-size:14px !important;line-height:1.7}
+.act2 .steps .card::after{content:'+';position:absolute;top:20px;right:4px;font-size:16px;color:rgba(201,168,76,0.55);font-family:'Outfit',sans-serif;font-weight:300;line-height:1;transition:color 0.2s}
+.act2 .steps .card.open{padding-bottom:24px}
+.act2 .steps .card.open::after{content:'−';color:var(--gold)}
+.act2 .steps .card.open .card-body{display:block !important}
 /* Diff-grid accordion: 2x2 on mobile, tap to expand */
 .act2 .diff-grid{grid-template-columns:1fr 1fr!important;gap:8px}
 .act2 .diff-grid .card{border:1px solid rgba(255,255,255,0.1)!important;padding:22px 14px!important;text-align:center;position:relative;transition:all 0.3s ease;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;min-height:120px;justify-content:center}
@@ -558,9 +566,37 @@ if(t){
 })();
 
 // Pin about section so full card is visible when stuck
-// Mobile diff-grid accordion (2x2 tap-to-expand)
+// Mobile accordion for diff-grid (2x2) and steps (stacked rows)
+function kbAccordion(cards){
+  if(!cards.length)return;
+  function toggle(el){
+    var wasOpen=el.classList.contains('open');
+    cards.forEach(function(c){c.classList.remove('open')});
+    if(!wasOpen)el.classList.add('open');
+  }
+  var startY=0;
+  cards.forEach(function(card){
+    card.addEventListener('touchstart',function(e){startY=e.touches[0].clientY},{passive:true});
+    card.addEventListener('touchend',function(e){
+      if(e.target.closest('a'))return;
+      if(Math.abs(startY-e.changedTouches[0].clientY)>10)return;
+      if(window.innerWidth>900)return;
+      e.stopPropagation();toggle(this);
+    },{passive:true});
+    card.addEventListener('click',function(e){
+      if('ontouchstart' in window)return;
+      if(e.target.closest('a'))return;
+      if(window.innerWidth>900)return;
+      toggle(this);
+    });
+  });
+}
+kbAccordion(document.querySelectorAll('.act2 .diff-grid .card'));
+kbAccordion(document.querySelectorAll('.act2 .steps .card'));
+
+// Old inline wiring below is superseded by kbAccordion; leave stub for safety
 (function(){
-var cards=document.querySelectorAll('.act2 .diff-grid .card');
+var cards=[];
 if(!cards.length)return;
 function toggle(el){
   var wasOpen=el.classList.contains('open');
