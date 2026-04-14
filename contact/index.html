@@ -177,13 +177,13 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <div class="form-section">
 <label class="form-label">What brings you here?</label>
 <div class="chip-group" id="purposeChips">
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Buying my first home</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Buying (not first time)</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Refinancing</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Cash-out refi</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Investment property</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Self-employed</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Just exploring</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Buying my first home</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Buying (not first time)</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Refinancing</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Cash-out refi</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Investment property</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Self-employed</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Just exploring</div>
 </div>
 <input type="hidden" name="purpose" id="purposeField">
 </div>
@@ -191,12 +191,12 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <div class="form-section">
 <label class="form-label">Loan program interest?</label>
 <div class="chip-group" id="programChips">
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Conventional</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">FHA</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">VA</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">USDA</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Jumbo</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Not sure</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Conventional</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">FHA</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">VA</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">USDA</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Jumbo</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Not sure</div>
 </div>
 <input type="hidden" name="program" id="programField">
 </div>
@@ -204,9 +204,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <div class="form-section">
 <label class="form-label">Preferred term</label>
 <div class="chip-group" id="termChips">
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Shorter term</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Standard term</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Not sure</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Shorter term</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Standard term</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Not sure</div>
 </div>
 <input type="hidden" name="term" id="termField">
 </div>
@@ -214,10 +214,10 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <div class="form-section">
 <label class="form-label">Down payment (if you know)</label>
 <div class="chip-group" id="downChips">
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">As little as possible</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Some saved up</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Putting down a lot</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Not sure yet</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">As little as possible</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Some saved up</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Putting down a lot</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Not sure yet</div>
 </div>
 <input type="hidden" name="down_payment" id="downField">
 </div>
@@ -225,11 +225,11 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <div class="form-section">
 <label class="form-label">Where are you in the process?</label>
 <div class="chip-group" id="stageChips">
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Just starting to look</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Found a home / making offers</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Under contract</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Pre-approved elsewhere</div>
-<div class="chip" role="button" tabindex="0" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Want to refinance</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Just starting to look</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Found a home / making offers</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Under contract</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Pre-approved elsewhere</div>
+<div class="chip" role="button" tabindex="0" aria-pressed="false" onclick="toggleChip(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChip(this)}">Want to refinance</div>
 </div>
 <input type="hidden" name="stage" id="stageField">
 </div>
@@ -266,6 +266,7 @@ if(e.key==='Escape'){var mm=document.getElementById('mobileMenu');if(mm&&mm.clas
 
 function toggleChip(el){
 el.classList.toggle('selected');
+el.setAttribute('aria-pressed',el.classList.contains('selected'));
 // Update hidden field for the parent group
 var group=el.parentElement;
 var hidden=group.nextElementSibling;
