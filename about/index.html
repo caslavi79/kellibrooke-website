@@ -42,27 +42,27 @@ button{font-family:var(--body);cursor:pointer;border:none;background:none}
 :focus-visible{outline:2px solid var(--forest);outline-offset:2px;border-radius:4px}
 
 /* Nav */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(248,245,239,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 32px}
-.nav-logo{display:flex;align-items:center;gap:12px}
+nav{position:sticky;top:0;z-index:50;background:rgba(248,245,239,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 60px}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
 .nav-logo img{height:28px;width:auto}
 .nav-logo .logo-line{height:28px;width:3px}
 .nav-logo .logo-mp{height:16px;width:auto;position:relative;top:2px}
-.nav-links{display:flex;gap:48px;align-items:center}
-.nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:color .2s;position:relative}
-.nav-links a:hover{color:var(--forest)}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--gold);transition:width 0.2s}
-.nav-links a:hover::after{width:100%}
-.nav-links a.active{color:var(--forest);font-weight:600}
-.nav-links a.active::after{width:100%}
-.nav-cta{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:#fff;font-size:14px;font-weight:600;padding:13px 24px;border-radius:8px;transition:background .2s;min-height:44px}
-.nav-cta:hover{background:var(--gold-hover)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.hamburger span{width:22px;height:2px;background:var(--forest);border-radius:2px}
-.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--cream);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.nav-links{display:flex;align-items:center;gap:48px}
+.nav-link{font-size:14px;color:var(--muted);text-decoration:none;font-weight:500;transition:color 0.15s;position:relative}
+.nav-link:hover{color:var(--forest)}
+.nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--gold);transition:width 0.2s}
+.nav-link:hover::after{width:100%}
+.nav-link.active{color:var(--forest);font-weight:600}
+.nav-link.active::after{width:100%}
+.nav-cta{display:inline-flex;align-items:center;background:var(--gold);color:#fff;padding:13px 24px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;font-family:'Outfit',sans-serif;min-height:44px}
+.nav-cta:hover{background:var(--gold-hover);transform:translateY(-1px);box-shadow:0 4px 16px rgba(201,168,76,0.3)}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--forest);margin:5px 0;transition:all 0.3s}
+.mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;background:rgba(248,245,239,0.97);backdrop-filter:blur(20px);padding:20px 24px;z-index:49;border-bottom:1px solid var(--border);flex-direction:column;gap:16px}
 .mobile-menu.open{display:flex}
-.mobile-menu a{font-family:var(--display);font-size:24px;color:var(--forest)}
-.mobile-close{position:absolute;top:20px;right:28px;font-size:28px;color:var(--forest);cursor:pointer}
+.mobile-menu a{font-size:16px;color:var(--bark);text-decoration:none;font-weight:500;padding:8px 0}
+.mobile-menu a:last-child{background:var(--gold);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;text-align:center}
 
 /* Section utility */
 .section{padding:100px 32px}
@@ -70,7 +70,7 @@ button{font-family:var(--body);cursor:pointer;border:none;background:none}
 .section-label{font-size:10px;text-transform:uppercase;letter-spacing:4px;color:var(--gold-text);font-weight:600;margin-bottom:16px}
 
 /* Hero */
-.hero{padding:160px 32px 80px;background:var(--cream)}
+.hero{padding:80px 32px 60px;background:var(--cream)}
 .hero-inner{max-width:var(--max-w);margin:0 auto;text-align:center}
 .hero-text h1{font-family:var(--display);font-size:48px;line-height:1.15;color:var(--forest);margin-bottom:20px}
 .hero-text .subtitle{font-size:18px;color:var(--muted);line-height:1.6;max-width:520px;margin:0 auto}
@@ -184,13 +184,16 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 
 /* Responsive */
 @media(max-width:900px){
-.nav-links{display:none}
-.hamburger{display:flex}
-.nav-inner{padding:14px 16px}
+.nav-inner{padding:0 16px;height:56px}
+.nav-link{display:none}
+.hamburger{display:block}
+.nav-logo{gap:6px}
 .nav-logo img{height:20px}
 .nav-logo .logo-line{height:18px;width:2px}
 .nav-logo .logo-mp{height:11px}
-.hero{padding:120px 24px 60px}
+.nav-cta{padding:10px 20px;font-size:13px}
+.nav-links{margin-left:auto;margin-right:4vw;gap:14px}
+.hero{padding:48px 24px 40px}
 .hero-text h1{font-size:34px}
 .bio{padding:20px 24px 60px}
 .bio-inner{grid-template-columns:1fr;gap:32px}
@@ -223,21 +226,19 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
-<nav class="nav">
+<nav>
 <div class="nav-inner">
 <a href="/kellibrooke-website/" class="nav-logo"><img src="../kellibrooke_wordmark.png" alt="Kellibrooke" class="logo-kb"><img src="../kellibrooke_line.png" alt="" class="logo-line"><img src="../kellibrooke_mp.png" alt="Mortgage Partners" class="logo-mp"></a>
-<div class="nav-links"><a href="/kellibrooke-website/?to=how">How It Works</a><a href="/kellibrooke-website/expertise/">Scenarios</a><a href="/kellibrooke-website/programs/">Loan Programs</a><a href="/kellibrooke-website/about/" class="active">About Me</a><a href="/kellibrooke-website/contact/" class="nav-cta">Contact</a></div>
-<button class="hamburger" aria-label="Menu" aria-expanded="false" onclick="var m=document.querySelector('.mobile-menu');m.classList.add('open');this.setAttribute('aria-expanded','true')"><span></span><span></span><span></span></button>
+<div class="nav-links"><a href="/kellibrooke-website/?to=how" class="nav-link">How It Works</a><a href="/kellibrooke-website/expertise/" class="nav-link">Scenarios</a><a href="/kellibrooke-website/programs/" class="nav-link">Loan Programs</a><a href="/kellibrooke-website/about/" class="nav-link active">About Me</a><a href="/kellibrooke-website/contact/" class="nav-cta">Contact</a></div>
+<button class="hamburger" aria-label="Menu" aria-expanded="false" onclick="var m=document.getElementById('mobileMenu');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))"><span></span><span></span><span></span></button>
 </div>
 </nav>
-
-<div class="mobile-menu">
-<button class="mobile-close" aria-label="Close menu" onclick="this.parentElement.classList.remove('open');document.querySelector('.hamburger').setAttribute('aria-expanded','false')">&times;</button>
-<a href="/kellibrooke-website/?to=how" onclick="this.parentElement.classList.remove('open')">How It Works</a>
-<a href="/kellibrooke-website/expertise/" onclick="this.parentElement.classList.remove('open')">Scenarios</a>
-<a href="/kellibrooke-website/programs/" onclick="this.parentElement.classList.remove('open')">Loan Programs</a>
-<a href="/kellibrooke-website/about/" onclick="this.parentElement.classList.remove('open')">About Me</a>
-<a href="/kellibrooke-website/contact/" onclick="this.parentElement.classList.remove('open')">Contact</a>
+<div class="mobile-menu" id="mobileMenu">
+<a href="/kellibrooke-website/?to=how">How It Works</a>
+<a href="/kellibrooke-website/expertise/">Scenarios</a>
+<a href="/kellibrooke-website/programs/">Loan Programs</a>
+<a href="/kellibrooke-website/about/">About Me</a>
+<a href="/kellibrooke-website/contact/" class="nav-cta">Contact</a>
 </div>
 
 <main id="main-content">
