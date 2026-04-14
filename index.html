@@ -315,8 +315,7 @@ h1{font-size:clamp(32px,8vw,44px);margin:0 0 20px;text-align:left}
 .footer-top{flex-direction:column}
 .footer-cols{flex-direction:column;gap:20px}
 
-/* About section scrolls naturally on mobile (was sticky-pinning and cutting off content) */
-.about-pin{position:relative!important;top:auto!important}
+
 
 /* Act 2 overrides */
 .act2 .section{padding:48px 0}
@@ -589,7 +588,6 @@ cards.forEach(function(card){
 function setPin(){
 var pin=document.querySelector('.about-pin');
 if(!pin)return;
-if(window.matchMedia('(max-width:900px)').matches){pin.style.top='';return}
 var pinH=pin.offsetHeight;
 var viewH=window.innerHeight;
 var navH=68;
