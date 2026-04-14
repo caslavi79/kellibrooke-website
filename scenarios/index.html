@@ -56,24 +56,27 @@ nav{position:sticky;top:0;z-index:50;background:rgba(248,245,239,0.85);backdrop-
 .page-hero p{font-size:17px;color:var(--muted);max-width:560px;margin:0 auto;font-weight:300;line-height:1.75}
 .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--gold);text-decoration:none;font-weight:500;font-size:14px;margin-bottom:32px}
 .back-link:hover{gap:10px}
-.scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding-bottom:80px}
-.scenario-card{background:var(--white);border-radius:18px;padding:32px 28px;box-shadow:0 8px 30px rgba(26,58,42,0.08),0 2px 6px rgba(26,58,42,0.04);transition:all 0.3s;border:1.5px solid transparent;display:flex;flex-direction:column}
-.scenario-card:hover{box-shadow:0 20px 50px rgba(26,58,42,0.12),0 4px 10px rgba(26,58,42,0.06);transform:translateY(-4px);border-color:var(--gold)}
-.scenario-num{font-family:'DM Serif Display',serif;font-size:48px;color:rgba(201,168,76,0.15);line-height:1;margin-bottom:8px}
-.scenario-title{font-family:'DM Serif Display',serif;font-size:20px;color:var(--forest);margin-bottom:10px}
-.scenario-body{font-size:14px;color:var(--muted);line-height:1.75;font-weight:300;flex:1}
-.scenario-cta{margin-top:16px;font-size:13px;color:var(--gold);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:gap 0.15s}
-.scenario-card:hover .scenario-cta{gap:8px}
+.scenario-list{display:flex;flex-direction:column;padding:0 0 60px;border-top:1px solid var(--border)}
+.scenario-row{display:grid;grid-template-columns:110px 1fr auto;gap:36px;align-items:center;padding:36px 8px;border-bottom:1px solid var(--border);transition:padding 0.25s ease,background 0.25s ease;text-decoration:none;color:inherit}
+.scenario-row:hover{padding-left:24px;background:rgba(201,168,76,0.04)}
+.scenario-row:hover .scenario-num{color:var(--gold);opacity:1}
+.scenario-row:hover .scenario-arrow{transform:translateX(6px);color:var(--gold)}
+.scenario-num{font-family:'DM Serif Display',serif;font-size:56px;color:var(--gold);opacity:0.28;line-height:1;transition:opacity 0.25s,color 0.25s;letter-spacing:-1px}
+.scenario-content{display:flex;flex-direction:column;gap:8px;max-width:720px}
+.scenario-title{font-family:'DM Serif Display',serif;font-size:24px;color:var(--forest);line-height:1.2}
+.scenario-body{font-size:15px;color:var(--muted);line-height:1.7;font-weight:300}
+.scenario-arrow{font-size:22px;color:var(--muted);transition:transform 0.25s,color 0.25s;flex-shrink:0}
 .scenarios-bottom{text-align:center;padding:0 0 80px}
 .scenarios-bottom p{font-size:16px;color:var(--muted);margin-bottom:24px;font-weight:300}
 .btn-primary{background:var(--gold);color:#fff;padding:16px 36px;border-radius:10px;font-size:16px;font-weight:600;text-decoration:none;transition:all 0.25s;display:inline-flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;box-shadow:0 4px 16px rgba(201,168,76,0.2)}
 .btn-primary:hover{background:var(--gold-hover);transform:translateY(-3px);box-shadow:0 8px 28px rgba(201,168,76,0.35)}
 @media(max-width:900px){
-.scenario-grid{grid-template-columns:1fr;gap:12px}
-.scenario-card{padding:24px 20px}
-.scenario-title{font-size:18px}
-.scenario-body{font-size:13px}
-.scenario-num{font-size:40px}
+.scenario-row{grid-template-columns:56px 1fr 20px;gap:16px;padding:22px 0}
+.scenario-row:hover{padding-left:12px}
+.scenario-num{font-size:32px}
+.scenario-title{font-size:17px}
+.scenario-body{font-size:13px;line-height:1.65}
+.scenario-arrow{font-size:18px}
 }
 footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0 32px;box-shadow:0 -4px 24px rgba(26,58,42,0.03)}
 .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;padding-bottom:32px;border-bottom:1px solid var(--border);margin-bottom:24px;flex-wrap:wrap}
@@ -133,91 +136,115 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <p>I handle every type of mortgage, but the files I built this business on are the ones other lenders couldn't figure out. If your situation is straightforward, I'll close it fast. If it's complicated, even better.</p>
 </div>
 
-<div class="scenario-grid">
+<div class="scenario-list">
 
-<div class="scenario-card">
+<a href="/kellibrooke-website/scenarios/first-time-buyers/" class="scenario-row" aria-label="First-Time Home Buyers scenario details">
 <div class="scenario-num">01</div>
+<div class="scenario-content">
 <h2 class="scenario-title">First-Time Home Buyers</h2>
 <div class="scenario-body">Overwhelmed by conflicting advice and don't know what you can actually afford. I walk you through everything from pre-approval to keys in plain English.</div>
-<a href="/kellibrooke-website/scenarios/first-time-buyers/" class="scenario-cta">First-time buyer guide &rarr;</a>
 </div>
+<div class="scenario-arrow" aria-hidden="true">&rarr;</div>
+</a>
 
-<div class="scenario-card">
+<a href="/kellibrooke-website/scenarios/self-employed/" class="scenario-row" aria-label="Self-Employed & Business Owners scenario details">
 <div class="scenario-num">02</div>
+<div class="scenario-content">
 <h2 class="scenario-title">Self-Employed &amp; Business Owners</h2>
 <div class="scenario-body">Your business does well but your tax returns don't show it. Most lenders panic at your Schedule C or K-1. I know how to read the real story and prove your actual income.</div>
-<a href="/kellibrooke-website/scenarios/self-employed/" class="scenario-cta">Self-employed loans &rarr;</a>
 </div>
+<div class="scenario-arrow" aria-hidden="true">&rarr;</div>
+</a>
 
-<div class="scenario-card">
+<a href="/kellibrooke-website/scenarios/multiple-income/" class="scenario-row" aria-label="Multiple Income Streams scenario details">
 <div class="scenario-num">03</div>
+<div class="scenario-content">
 <h2 class="scenario-title">Multiple Income Streams</h2>
 <div class="scenario-body">1099s, an LLC, rental income, maybe an old W-2. Most lenders see this and close the file. I add it all up and match you with the lender whose method fits your file.</div>
-<a href="/kellibrooke-website/scenarios/multiple-income/" class="scenario-cta">Multiple income options &rarr;</a>
 </div>
+<div class="scenario-arrow" aria-hidden="true">&rarr;</div>
+</a>
 
-<div class="scenario-card">
+<a href="/kellibrooke-website/scenarios/1099-freelance/" class="scenario-row" aria-label="1099 / Freelance / Gig Workers scenario details">
 <div class="scenario-num">04</div>
+<div class="scenario-content">
 <h2 class="scenario-title">1099 / Freelance / Gig Workers</h2>
 <div class="scenario-body">Variable contract work, multiple gigs, no W-2. Most lenders don't know what to do with you. I find the right way to document it and the right lender to approve it.</div>
-<a href="/kellibrooke-website/scenarios/1099-freelance/" class="scenario-cta">1099 and freelance options &rarr;</a>
 </div>
+<div class="scenario-arrow" aria-hidden="true">&rarr;</div>
+</a>
 
-<div class="scenario-card">
+<a href="/kellibrooke-website/scenarios/investor-scaling/" class="scenario-row" aria-label="Investor Scaling a Portfolio scenario details">
 <div class="scenario-num">05</div>
+<div class="scenario-content">
 <h2 class="scenario-title">Investor Scaling a Portfolio</h2>
 <div class="scenario-body">Your Schedule E shows losses that aren't real losses and lenders keep saying no. I know how to read it properly and help you keep acquiring.</div>
-<a href="/kellibrooke-website/scenarios/investor-scaling/" class="scenario-cta">Investor portfolio options &rarr;</a>
 </div>
+<div class="scenario-arrow" aria-hidden="true">&rarr;</div>
+</a>
 
-<div class="scenario-card">
+<a href="/kellibrooke-website/scenarios/job-change/" class="scenario-row" aria-label="Recently Changed Jobs or Employment Gaps scenario details">
 <div class="scenario-num">06</div>
+<div class="scenario-content">
 <h2 class="scenario-title">Recently Changed Jobs or Employment Gaps</h2>
 <div class="scenario-body">New role, industry switch, or gap on your resume. Most lenders default to no. I figure out which ones say yes and under what conditions.</div>
-<a href="/kellibrooke-website/scenarios/job-change/" class="scenario-cta">Job change options &rarr;</a>
 </div>
+<div class="scenario-arrow" aria-hidden="true">&rarr;</div>
+</a>
 
-<div class="scenario-card">
+<a href="/kellibrooke-website/scenarios/credit-score/" class="scenario-row" aria-label="Credit Score on the Edge scenario details">
 <div class="scenario-num">07</div>
+<div class="scenario-content">
 <h2 class="scenario-title">Credit Score on the Edge</h2>
 <div class="scenario-body">You're close but not quite there. I run a rapid rescore simulation and tell you exactly what to fix. I've gotten borrowers mortgage-ready in days.</div>
-<a href="/kellibrooke-website/scenarios/credit-score/" class="scenario-cta">Credit score strategies &rarr;</a>
 </div>
+<div class="scenario-arrow" aria-hidden="true">&rarr;</div>
+</a>
 
-<div class="scenario-card">
+<a href="/kellibrooke-website/scenarios/gift-funds/" class="scenario-row" aria-label="Gift Funds or Hard-to-Source Assets scenario details">
 <div class="scenario-num">08</div>
+<div class="scenario-content">
 <h2 class="scenario-title">Gift Funds or Hard-to-Source Assets</h2>
 <div class="scenario-body">Gift money, crypto gains, unusual deposits. Every dollar at closing needs a paper trail. I know the sourcing requirements and tell you how to document it before it becomes a problem.</div>
-<a href="/kellibrooke-website/scenarios/gift-funds/" class="scenario-cta">Asset sourcing guide &rarr;</a>
 </div>
+<div class="scenario-arrow" aria-hidden="true">&rarr;</div>
+</a>
 
-<div class="scenario-card">
+<a href="/kellibrooke-website/scenarios/divorce-mortgage/" class="scenario-row" aria-label="Divorced, Separated, or Buying Off a Co-Borrower scenario details">
 <div class="scenario-num">09</div>
+<div class="scenario-content">
 <h2 class="scenario-title">Divorced, Separated, or Buying Off a Co-Borrower</h2>
 <div class="scenario-body">Refinancing an ex off the mortgage, buying post-divorce, or dealing with court orders your lender can't read. I handle these regularly and know how all of it works.</div>
-<a href="/kellibrooke-website/scenarios/divorce-mortgage/" class="scenario-cta">Divorce mortgage options &rarr;</a>
 </div>
+<div class="scenario-arrow" aria-hidden="true">&rarr;</div>
+</a>
 
-<div class="scenario-card">
+<a href="/kellibrooke-website/scenarios/fast-close/" class="scenario-row" aria-label="Tight Timeline, Nobody Else Can Close scenario details">
 <div class="scenario-num">10</div>
+<div class="scenario-content">
 <h2 class="scenario-title">Tight Timeline, Nobody Else Can Close</h2>
 <div class="scenario-body">Your lender fell apart or the seller wants to close yesterday. My fastest clear-to-close was 5 days. I move fast because I'm the only person touching your file.</div>
-<a href="/kellibrooke-website/scenarios/fast-close/" class="scenario-cta">Fast close details &rarr;</a>
 </div>
+<div class="scenario-arrow" aria-hidden="true">&rarr;</div>
+</a>
 
-<div class="scenario-card">
+<a href="/kellibrooke-website/scenarios/complex-income/" class="scenario-row" aria-label="Complex Income scenario details">
 <div class="scenario-num">11</div>
+<div class="scenario-content">
 <h2 class="scenario-title">Complex Income</h2>
 <div class="scenario-body">K-1s, RSUs, commission, bonuses. Your income is real but doesn't fit in a box. I match you with the lender whose method fits your file.</div>
-<a href="/kellibrooke-website/scenarios/complex-income/" class="scenario-cta">Complex income options &rarr;</a>
 </div>
+<div class="scenario-arrow" aria-hidden="true">&rarr;</div>
+</a>
 
-<div class="scenario-card">
+<a href="/kellibrooke-website/scenarios/credit-rebuilds/" class="scenario-row" aria-label="Credit Rebuilds & Past Events scenario details">
 <div class="scenario-num">12</div>
+<div class="scenario-content">
 <h2 class="scenario-title">Credit Rebuilds &amp; Past Events</h2>
 <div class="scenario-body">Bankruptcy, foreclosure, short sale, or rough credit history. I know the waiting periods for every program. If you're past yours, I can get you into a loan.</div>
-<a href="/kellibrooke-website/scenarios/credit-rebuilds/" class="scenario-cta">Credit rebuild options &rarr;</a>
 </div>
+<div class="scenario-arrow" aria-hidden="true">&rarr;</div>
+</a>
 
 </div>
 
