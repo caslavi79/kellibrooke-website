@@ -305,13 +305,13 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 <div class="carousel-track">
 <div class="testimonial-card reveal" aria-roledescription="slide" aria-label="1 of 9"><blockquote>"I have purchased homes and done financing six times. Case was my seventh. My experience with Case was the best I had. I will definitely go back to him any time I need future things."</blockquote><cite>Troy Schuktnecht &mdash; Driftwood TX</cite></div>
 <div class="testimonial-card reveal" aria-roledescription="slide" aria-label="2 of 9"><blockquote>"It just felt like he fought for us and our best the entire time we worked with him. When I called, Case invariably answered. He was quick to respond. The delay was on my end, not on Case's."</blockquote><cite>Kyle Hubbart &mdash; Lakeway TX</cite></div>
-<div class="testimonial-card reveal" aria-roledescription="slide" aria-label="3 of 9"><blockquote>"The deal died like three different times. They worked tirelessly, and because of them I was able to finally move into my house with my two kids. So I highly recommend them. They work tirelessly for you."</blockquote><cite>Heather Toomey-Kaluzny</cite></div>
+<div class="testimonial-card reveal" aria-roledescription="slide" aria-label="3 of 9"><blockquote>"The deal died like three different times. They worked tirelessly, and because of them I was able to finally move into my house with my two kids. So I highly recommend them. They work tirelessly for you."</blockquote><cite>Heather Toomey-Kaluzny &mdash; New Braunfels TX</cite></div>
 <div class="testimonial-card reveal" aria-roledescription="slide" aria-label="4 of 9"><blockquote>"After months and months I had all but given up, but when I met Case, he actually got excited. His eyes lit up. We got excited, but it wasn't as excited as Case got. He was genuinely giddy when he saw how much he was saving us."</blockquote><cite>Jeremy Edwards &mdash; Austin TX</cite></div>
 <div class="testimonial-card reveal" aria-roledescription="slide" aria-label="5 of 9"><blockquote>"Everything he said he would do, he did. He did it on time. He did not overpromise. In fact, he overdelivered, and I think that's what you're looking for."</blockquote><cite>Ryan Metro &mdash; Circle C, TX</cite></div>
 <div class="testimonial-card reveal" aria-roledescription="slide" aria-label="6 of 9"><blockquote>"He got me the correct information. He was very knowledgeable, worked very hard to make sure everything got taken care of in a timely manner. He's very knowledgeable and just a great guy to work with."</blockquote><cite>Nicole Fisher &mdash; Buda TX</cite></div>
 <div class="testimonial-card reveal" aria-roledescription="slide" aria-label="7 of 9"><blockquote>"Keeping us informed, keeping us in the loop, the communication factor was just over the top. He knows his stuff, the details, the ins and outs. Provided us the coaching and the guidance to help us make a decision."</blockquote><cite>Luis Gonzalez &mdash; Smithville TX</cite></div>
 <div class="testimonial-card reveal" aria-roledescription="slide" aria-label="8 of 9"><blockquote>"Case has done a tremendous job working with me. He is not only very patient, caring, and even funny. Case is very knowledgeable about the different steps of buying a new home."</blockquote><cite>Suzie Major &mdash; North Austin TX</cite></div>
-<div class="testimonial-card featured reveal" aria-roledescription="slide" aria-label="9 of 9"><div class="testimonial-tag">From a real estate partner</div><blockquote>"He didn't convince them to buy &mdash; he helped them realize that this was definitely in their best interest. He actually put together this 'how payments change' and 'what to expect' sheet for me, and it was way easier to track than trying to read through a bunch of emails and loan estimates and everything else."</blockquote><cite>Ashton Reis &mdash; Realtor, eXp Realty (Spicewood TX)</cite></div>
+<div class="testimonial-card featured reveal" aria-roledescription="slide" aria-label="9 of 9"><div class="testimonial-tag">From a real estate professional</div><blockquote>"He didn't convince them to buy &mdash; he helped them realize that this was definitely in their best interest. He actually put together this 'how payments change' and 'what to expect' sheet for me, and it was way easier to track than trying to read through a bunch of emails and loan estimates and everything else."</blockquote><cite>Ashton Reis &mdash; Realtor, eXp Realty (Spicewood TX)</cite></div>
 </div>
 </div>
 <div class="carousel-controls">
@@ -327,83 +327,97 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:48px 0
 (function(){
   var vp=document.getElementById('testimonialCarousel');
   if(!vp)return;
-  var track=vp.querySelector('.carousel-track');
-  var cards=track.querySelectorAll('.testimonial-card');
+  var cards=vp.querySelectorAll('.testimonial-card');
   var dotsWrap=document.getElementById('testiDots');
   var prevBtn=document.getElementById('testiPrev');
   var nextBtn=document.getElementById('testiNext');
-  var perView=window.matchMedia('(max-width:900px)').matches?1:2;
-  var pages=Math.ceil(cards.length/perView);
-  var current=0;
+  var perView,pages,current=0,scrollTimer,programmaticScroll=false;
 
-  // Build dots
-  for(var i=0;i<pages;i++){
-    var dot=document.createElement('button');
-    dot.className='carousel-dot'+(i===0?' active':'');
-    dot.setAttribute('aria-label','Go to testimonial page '+(i+1));
-    dot.setAttribute('role','tab');
-    dot.dataset.index=i;
-    dot.addEventListener('click',function(e){goTo(parseInt(e.currentTarget.dataset.index,10))});
-    dotsWrap.appendChild(dot);
+  function computeLayout(){
+    perView=window.matchMedia('(max-width:900px)').matches?1:2;
+    pages=Math.ceil(cards.length/perView);
+  }
+
+  function buildDots(){
+    dotsWrap.innerHTML='';
+    for(var i=0;i<pages;i++){
+      var dot=document.createElement('button');
+      dot.className='carousel-dot'+(i===current?' active':'');
+      dot.setAttribute('aria-label','Go to testimonial page '+(i+1));
+      dot.setAttribute('role','tab');
+      dot.dataset.index=i;
+      dot.addEventListener('click',function(e){goTo(parseInt(e.currentTarget.dataset.index,10))});
+      dotsWrap.appendChild(dot);
+    }
   }
 
   function updateUI(){
     var dots=dotsWrap.querySelectorAll('.carousel-dot');
-    dots.forEach(function(d,i){d.classList.toggle('active',i===current)});
-    prevBtn.disabled=current===0;
-    nextBtn.disabled=current===pages-1;
+    for(var i=0;i<dots.length;i++){
+      if(i===current)dots[i].classList.add('active');
+      else dots[i].classList.remove('active');
+    }
+    prevBtn.disabled=current<=0;
+    nextBtn.disabled=current>=pages-1;
+  }
+
+  function pageFromScroll(){
+    var maxScroll=vp.scrollWidth-vp.clientWidth;
+    // At end of scroll (within 4px tolerance) → last page
+    if(maxScroll>0&&vp.scrollLeft>=maxScroll-4)return pages-1;
+    if(vp.scrollLeft<=2)return 0;
+    // Otherwise compute from card position
+    var cardWidth=cards[0].offsetWidth+20;
+    var pageWidth=cardWidth*perView;
+    return Math.max(0,Math.min(pages-1,Math.round(vp.scrollLeft/pageWidth)));
   }
 
   function goTo(idx){
     current=Math.max(0,Math.min(pages-1,idx));
-    var targetCard=cards[current*perView];
-    if(targetCard){
-      vp.scrollTo({left:targetCard.offsetLeft-vp.offsetLeft,behavior:'smooth'});
+    programmaticScroll=true;
+    if(current===pages-1){
+      // Last page: scroll to the end so the final card sits at the right edge
+      vp.scrollTo({left:vp.scrollWidth,behavior:'smooth'});
+    }else if(current===0){
+      vp.scrollTo({left:0,behavior:'smooth'});
+    }else{
+      var targetCard=cards[current*perView];
+      if(targetCard)vp.scrollTo({left:targetCard.offsetLeft,behavior:'smooth'});
     }
+    setTimeout(function(){programmaticScroll=false},600);
     updateUI();
   }
 
   prevBtn.addEventListener('click',function(){goTo(current-1)});
   nextBtn.addEventListener('click',function(){goTo(current+1)});
 
-  // Keyboard support
   vp.addEventListener('keydown',function(e){
     if(e.key==='ArrowLeft'){e.preventDefault();goTo(current-1)}
     else if(e.key==='ArrowRight'){e.preventDefault();goTo(current+1)}
   });
 
-  // Update on scroll (in case user swipes)
-  var scrollTimer;
   vp.addEventListener('scroll',function(){
     clearTimeout(scrollTimer);
     scrollTimer=setTimeout(function(){
-      var cardWidth=cards[0].offsetWidth+20;
-      var idx=Math.round(vp.scrollLeft/(cardWidth*perView));
-      if(idx!==current){current=Math.max(0,Math.min(pages-1,idx));updateUI()}
+      if(programmaticScroll)return;
+      var newPage=pageFromScroll();
+      if(newPage!==current){current=newPage;updateUI()}
     },120);
   });
 
-  // Resize handling
   window.addEventListener('resize',function(){
-    var newPerView=window.matchMedia('(max-width:900px)').matches?1:2;
-    if(newPerView!==perView){
-      perView=newPerView;
-      pages=Math.ceil(cards.length/perView);
-      dotsWrap.innerHTML='';
-      for(var i=0;i<pages;i++){
-        var dot=document.createElement('button');
-        dot.className='carousel-dot'+(i===0?' active':'');
-        dot.setAttribute('aria-label','Go to testimonial page '+(i+1));
-        dot.setAttribute('role','tab');
-        dot.dataset.index=i;
-        dot.addEventListener('click',function(e){goTo(parseInt(e.currentTarget.dataset.index,10))});
-        dotsWrap.appendChild(dot);
-      }
+    var oldPerView=perView;
+    computeLayout();
+    if(oldPerView!==perView){
       current=0;
-      goTo(0);
+      buildDots();
+      vp.scrollTo({left:0,behavior:'auto'});
+      updateUI();
     }
   });
 
+  computeLayout();
+  buildDots();
   updateUI();
 })();
 </script>
