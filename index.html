@@ -26,8 +26,8 @@
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--forest:#1a3a2a;--forest-08:rgba(26,58,42,0.08);--forest-05:rgba(26,58,42,0.05);--cream:#f8f5ef;--white:#fefcf9;--gold:#c9a84c;--gold-btn:#9a7b30;--gold-btn-hover:#8a6d2b;--gold-hover:#b8943f;--gold-text:#a68a3a;--bark:#3d2b1f;--sage:#7a9a82;--sand:#9e9282;--muted:#6b6356;--light-muted:#8a7e6b;--border:#e8e2d8;--lift:0 8px 30px rgba(26,58,42,0.08),0 20px 60px rgba(26,58,42,0.05),0 2px 6px rgba(26,58,42,0.04);--lift-hover:0 20px 50px rgba(26,58,42,0.12),0 40px 80px rgba(26,58,42,0.08),0 4px 10px rgba(26,58,42,0.06)}
 html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;color:var(--bark);line-height:1.6;overflow:hidden;margin:0;height:100vh}
-.shell{position:fixed;inset:0;background:var(--cream);overflow:hidden;z-index:0}
+body{font-family:'Outfit',sans-serif;color:var(--bark);line-height:1.6;margin:0}
+.shell{position:fixed;inset:0;background:var(--cream);overflow:hidden;z-index:-1;pointer-events:none}
 .glob{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.45) 0%,rgba(201,168,76,0.15) 35%,transparent 65%);pointer-events:none;filter:blur(30px)}
 .glob:nth-child(1){width:900px;height:900px;top:-15%;left:-20%;animation:d1 28s ease-in-out infinite}
 .glob:nth-child(2){width:800px;height:800px;bottom:-10%;right:-15%;animation:d2 32s ease-in-out infinite}
@@ -37,7 +37,6 @@ body{font-family:'Outfit',sans-serif;color:var(--bark);line-height:1.6;overflow:
 @keyframes d1{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,20px)}}
 @keyframes d2{0%,100%{transform:translate(0,0)}50%{transform:translate(-20px,25px)}}
 @keyframes d3{0%,100%{transform:translate(0,0)}50%{transform:translate(15px,-20px)}}
-.scroll{position:fixed;inset:0;overflow-y:auto;-webkit-overflow-scrolling:touch;z-index:1}
 nav{position:sticky;top:0;z-index:50;background:rgba(248,245,239,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 60px}
 .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
@@ -363,8 +362,7 @@ h1{font-size:clamp(32px,8vw,44px);margin:0 0 20px;text-align:left}
 <body>
 <a href="#main-content" class="skip-link">Skip to content</a>
 <div class="shell"><div class="glob"></div><div class="glob"></div><div class="glob"></div><div class="glob"></div><div class="glob"></div></div>
-<div class="scroll">
-<nav><div class="nav-inner"><a href="#" class="nav-logo" onclick="event.preventDefault();document.querySelector('.scroll').scrollTo({top:0,behavior:'smooth'})"><img src="kellibrooke_wordmark.png" alt="Kellibrooke" class="logo-kb"><img src="kellibrooke_line.png" alt="" class="logo-line"><img src="kellibrooke_mp.png" alt="Mortgage Partners" class="logo-mp"></a><div class="nav-links"><a href="#how" class="nav-link" onclick="event.preventDefault();document.getElementById('how').scrollIntoView({behavior:'smooth',block:'start'})">How It Works</a><a href="/kellibrooke-website/scenarios/" class="nav-link">Scenarios</a><a href="/kellibrooke-website/programs/" class="nav-link">Loan Programs</a><a href="/kellibrooke-website/about/" class="nav-link">About Me</a><a href="/kellibrooke-website/contact/" class="nav-cta">Contact</a></div><button class="hamburger" aria-label="Menu" aria-expanded="false" onclick="var m=document.getElementById('mobileMenu');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))"><span></span><span></span><span></span></button></div></nav>
+<nav><div class="nav-inner"><a href="#" class="nav-logo" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})"><img src="kellibrooke_wordmark.png" alt="Kellibrooke" class="logo-kb"><img src="kellibrooke_line.png" alt="" class="logo-line"><img src="kellibrooke_mp.png" alt="Mortgage Partners" class="logo-mp"></a><div class="nav-links"><a href="#how" class="nav-link" onclick="event.preventDefault();document.getElementById('how').scrollIntoView({behavior:'smooth',block:'start'})">How It Works</a><a href="/kellibrooke-website/scenarios/" class="nav-link">Scenarios</a><a href="/kellibrooke-website/programs/" class="nav-link">Loan Programs</a><a href="/kellibrooke-website/about/" class="nav-link">About Me</a><a href="/kellibrooke-website/contact/" class="nav-cta">Contact</a></div><button class="hamburger" aria-label="Menu" aria-expanded="false" onclick="var m=document.getElementById('mobileMenu');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))"><span></span><span></span><span></span></button></div></nav>
 <div class="mobile-menu" id="mobileMenu">
 <a href="#how" onclick="event.preventDefault();document.getElementById('mobileMenu').classList.remove('open');document.getElementById('how').scrollIntoView({behavior:'smooth',block:'start'})">How It Works</a>
 <a href="/kellibrooke-website/scenarios/">Scenarios</a>
@@ -552,8 +550,7 @@ h1{font-size:clamp(32px,8vw,44px);margin:0 0 20px;text-align:left}
 </div>
 </div>
 <script>
-var s=document.querySelector('.scroll');
-var o=new IntersectionObserver(function(e){e.forEach(function(i){if(i.isIntersecting){i.target.classList.add('visible');o.unobserve(i.target)}})},{threshold:0.08,root:s});
+var o=new IntersectionObserver(function(e){e.forEach(function(i){if(i.isIntersecting){i.target.classList.add('visible');o.unobserve(i.target)}})},{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(function(el){o.observe(el)});
 
 // Handle ?to= param for cross-page scroll
