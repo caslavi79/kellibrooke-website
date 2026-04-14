@@ -294,17 +294,12 @@ h1{font-size:clamp(32px,8vw,44px);margin:0 0 20px;text-align:left}
 
 /* Cards (How It Works, Differentiators) */
 .steps,.market-grid{grid-template-columns:1fr}
-/* Programs: 2-col compact cards with chevron, body reveals inside card */
+/* Programs on mobile: 2-col grid, titles only (hide desc and link) */
 .act2 .programs{grid-template-columns:1fr 1fr !important;gap:10px}
-.act2 .programs .program{padding:16px 38px 14px 16px !important;border-radius:12px !important;position:relative;cursor:pointer;min-height:0;display:flex;flex-direction:column;gap:0;transition:all 0.25s ease}
-.act2 .programs .program-name{font-size:14px !important;margin-bottom:0;font-weight:600}
-.act2 .programs .program-desc{display:none;font-size:12px !important;line-height:1.6;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.08)}
-.act2 .programs .program-link{display:none;margin-top:10px;font-size:12px !important}
-.act2 .programs .program::after{content:'';position:absolute;top:22px;right:16px;width:7px;height:7px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg);transition:transform 0.3s ease;opacity:0.7}
-.act2 .programs .program.open{background:rgba(201,168,76,0.06);border-color:rgba(201,168,76,0.35)!important}
-.act2 .programs .program.open::after{transform:rotate(-135deg);top:24px;opacity:1}
-.act2 .programs .program.open .program-desc{display:block}
-.act2 .programs .program.open .program-link{display:inline-flex}
+.act2 .programs .program{padding:20px 16px !important;border-radius:12px !important;text-align:center;min-height:68px;display:flex;align-items:center;justify-content:center}
+.act2 .programs .program-name{font-size:15px !important;margin:0;font-weight:600}
+.act2 .programs .program-desc{display:none}
+.act2 .programs .program-link{display:none}
 .diff-grid{grid-template-columns:1fr}
 .card{padding:20px 18px;border-radius:14px}
 .card-title{font-size:17px}
@@ -601,22 +596,6 @@ function kbAccordion(cards){
 }
 kbAccordion(document.querySelectorAll('.act2 .diff-grid .card'));
 kbAccordion(document.querySelectorAll('.act2 .steps .card'));
-
-// Programs: whole card is an <a>, so first tap expands (preventDefault), Learn more link navigates
-(function(){
-var progs=document.querySelectorAll('.act2 .programs .program');
-if(!progs.length)return;
-progs.forEach(function(p){
-  p.addEventListener('click',function(e){
-    if(window.innerWidth>900)return;
-    if(e.target.closest('.program-link'))return; // let the Learn more link navigate
-    if(p.classList.contains('open'))return; // second tap on body/title navigates
-    e.preventDefault();
-    progs.forEach(function(q){q.classList.remove('open')});
-    p.classList.add('open');
-  });
-});
-})();
 
 // Old inline wiring below is superseded by kbAccordion; leave stub for safety
 (function(){
