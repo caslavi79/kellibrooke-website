@@ -102,11 +102,15 @@ h1 em{font-style:italic;color:var(--gold)}
 .about-meta{display:flex;gap:24px;margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
 .about-meta-item span{display:block;font-weight:700;color:var(--forest);font-size:14px}
 .about-meta-item{font-size:11px;color:var(--muted)}
-.test-row{display:grid;grid-template-columns:1fr 1fr;background:var(--forest);color:var(--cream)}
-.test-card{padding:32px 36px;position:relative}
-.test-card:first-child{border-right:1px solid rgba(255,255,255,0.08)}
+.test-row{position:relative;background:var(--forest);color:var(--cream);padding:32px 36px;min-height:230px}
+.test-card{position:absolute;inset:32px 36px;opacity:0;transition:opacity 0.7s ease;pointer-events:none}
+.test-card.active{opacity:1;pointer-events:auto}
 .test-quote{font-family:'DM Serif Display',serif;font-size:18px;color:var(--cream);line-height:1.45;margin-bottom:14px;padding-left:24px;border-left:2px solid var(--gold)}
 .test-author{font-size:12px;color:var(--sand);font-weight:500;padding-left:24px}
+.test-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px;padding-left:24px}
+.test-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px}
+.test-dots button{width:6px;height:6px;border-radius:50%;border:none;padding:0;background:rgba(255,255,255,0.25);cursor:pointer;transition:all 0.3s}
+.test-dots button.active{background:var(--gold);width:18px;border-radius:3px}
 .video-row{border-top:1px solid rgba(255,255,255,0.08);padding:20px 36px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:background 0.15s;background:var(--forest)}
 .video-row:hover{background:#1f4432}
 .about-section .test-row{border-radius:0 0 24px 24px}
@@ -282,7 +286,9 @@ h1{font-size:clamp(32px,8vw,44px);margin:0 0 20px;text-align:left}
 .about-meta{flex-wrap:wrap;gap:14px;margin-top:16px;padding-top:14px}
 
 /* Testimonials */
-.test-row{grid-template-columns:1fr}
+.test-row{padding:26px 24px;min-height:340px}
+.test-card{inset:26px 24px}
+.test-quote{font-size:16px}
 .test-card{padding:20px}
 .test-quote{font-size:15px;padding-left:16px}
 .test-author{font-size:11px;padding-left:16px}
@@ -425,9 +431,17 @@ h1{font-size:clamp(32px,8vw,44px);margin:0 0 20px;text-align:left}
 <div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fefcf9"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
 <div><div class="video-label">Watch client testimonial</div><div class="video-sub">Hear from real Kellibrooke clients in their own words</div></div>
 </div>
-<div class="test-row">
-<div class="test-card"><div class="test-quote">I have purchased homes and done financing six times. Case was my seventh. My experience with Case was the best I had. I will definitely go back to him any time I need future things.</div><div class="test-author">&mdash; Troy Schuktnecht, Driftwood TX</div></div>
+<div class="test-row" id="homeTestCarousel">
+<div class="test-card active"><div class="test-quote">I have purchased homes and done financing six times. Case was my seventh. My experience with Case was the best I had. I will definitely go back to him any time I need future things.</div><div class="test-author">&mdash; Troy Schuktnecht, Driftwood TX</div></div>
+<div class="test-card"><div class="test-quote">It just felt like he fought for us and our best the entire time we worked with him. When I called, Case invariably answered. He was quick to respond. The delay was on my end, not on Case's.</div><div class="test-author">&mdash; Kyle Hubbart, Lakeway TX</div></div>
+<div class="test-card"><div class="test-quote">The deal died like three different times. They worked tirelessly, and because of them I was able to finally move into my house with my two kids. So I highly recommend them. They work tirelessly for you.</div><div class="test-author">&mdash; Heather Toomey-Kaluzny, New Braunfels TX</div></div>
+<div class="test-card"><div class="test-quote">After months and months I had all but given up, but when I met Case, he actually got excited. His eyes lit up. We got excited, but it wasn't as excited as Case got. He was genuinely giddy when he saw how much he was saving us.</div><div class="test-author">&mdash; Jeremy Edwards, Austin TX</div></div>
+<div class="test-card"><div class="test-quote">Everything he said he would do, he did. He did it on time. He did not overpromise. In fact, he overdelivered, and I think that's what you're looking for.</div><div class="test-author">&mdash; Ryan Metro, Circle C, TX</div></div>
+<div class="test-card"><div class="test-quote">He got me the correct information. He was very knowledgeable, worked very hard to make sure everything got taken care of in a timely manner. He's very knowledgeable and just a great guy to work with.</div><div class="test-author">&mdash; Nicole Fisher, Buda TX</div></div>
+<div class="test-card"><div class="test-quote">Keeping us informed, keeping us in the loop, the communication factor was just over the top. He knows his stuff, the details, the ins and outs. Provided us the coaching and the guidance to help us make a decision.</div><div class="test-author">&mdash; Luis Gonzalez, Smithville TX</div></div>
 <div class="test-card"><div class="test-quote">Case has done a tremendous job working with me. He is not only very patient, caring, and even funny — Case is very knowledgeable about the different steps of buying a new home.</div><div class="test-author">&mdash; Suzie Major, North Austin TX</div></div>
+<div class="test-card"><div class="test-tag">From a real estate professional</div><div class="test-quote">He didn't convince them to buy — he helped them realize that this was definitely in their best interest. He actually put together this 'how payments change' and 'what to expect' sheet for me, and it was way easier to track than trying to read through a bunch of emails and loan estimates and everything else.</div><div class="test-author">&mdash; Ashton Reis — Realtor, eXp Realty (Spicewood TX)</div></div>
+<div class="test-dots"><button class="active" data-idx="0" aria-label="Show testimonial 1"></button><button class="" data-idx="1" aria-label="Show testimonial 2"></button><button class="" data-idx="2" aria-label="Show testimonial 3"></button><button class="" data-idx="3" aria-label="Show testimonial 4"></button><button class="" data-idx="4" aria-label="Show testimonial 5"></button><button class="" data-idx="5" aria-label="Show testimonial 6"></button><button class="" data-idx="6" aria-label="Show testimonial 7"></button><button class="" data-idx="7" aria-label="Show testimonial 8"></button><button class="" data-idx="8" aria-label="Show testimonial 9"></button></div>
 </div>
 </div>
 </div>
@@ -567,6 +581,26 @@ if(t){
 })();
 
 // Pin about section so full card is visible when stuck
+// Homepage about-card testimonial auto-carousel
+(function(){
+  var wrap=document.getElementById('homeTestCarousel');
+  if(!wrap)return;
+  var cards=wrap.querySelectorAll('.test-card');
+  var dots=wrap.querySelectorAll('.test-dots button');
+  if(cards.length<2)return;
+  var current=0,timer;
+  function go(idx){
+    cards[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current=(idx+cards.length)%cards.length;
+    cards[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+  function start(){timer=setInterval(function(){go(current+1)},7000)}
+  dots.forEach(function(d,i){d.addEventListener('click',function(){clearInterval(timer);go(i);start()})});
+  start();
+})();
+
 // Mobile accordion for diff-grid (2x2) and steps (stacked rows)
 function kbAccordion(cards){
   if(!cards.length)return;
